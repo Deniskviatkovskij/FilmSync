@@ -11,6 +11,7 @@ const hostOpt = document.getElementById('hostOpt')
 const kickOpt = document.getElementById('kickOpt')
 const vidsbtn = document.getElementById('vidsbtn')
 const vidyt = document.getElementById('vids')
+const dropdown = document.getElementById('dropas')
 if (messageForm != null){
     appendMessage('Jūs prisijungėte')
     setTimeout(  function(){
@@ -367,7 +368,7 @@ socket.on('roomUsersConnect', (  list, socketid ) => {
   });
   
     socket.on('redirectToMain', (a) => {
-    window.location.replace('index.html');
+   window.location.replace('index.html');
       });
   socket.on('roomUsersDisconnect', (  list,socketid ) => {
     var temp
@@ -414,6 +415,7 @@ function hostList(users, usersid ,x) {
     hostOpt.hidden=false;
     kickOpt.hidden=false;
     vidyt.hidden=false;
+    dropdown.hidden=false;
     vidsbtn.hidden=false;
     document.getElementById('logoCenter').style.display='none';
     document.getElementById('logoLeft').style.display='flex';
@@ -469,7 +471,9 @@ function userList() {
     hostOpt.hidden=true;
     kickOpt.hidden=true;
     vidyt.hidden=true;
+    dropdown.hidden=true;
     vidsbtn.hidden=true;
+    document.getElementById('dropas').style.display='none';
     document.getElementById('kickAndHost').style.display='none';
     document.getElementById('logoCenter').style.display='flex';
     document.getElementById('logoLeft').style.display='none';
@@ -563,7 +567,9 @@ function newHostList() {
     hostOpt.hidden=false;
     kickOpt.hidden=false;
     vidyt.hidden=false;
+    dropdown.hidden=false;
     vidsbtn.hidden=false;
+    document.getElementById('dropas').style.display='block';
     document.getElementById('logoCenter').style.display='none';
     document.getElementById('logoLeft').style.display='flex';
     document.getElementById('skip_five').hidden= false;

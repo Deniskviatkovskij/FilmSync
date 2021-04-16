@@ -7,7 +7,7 @@ body {
 }
 html {
 	font-family: Arial;
-	background-color: #3B3B58 !important;
+	background-color: #3B3B58 !important; 
 	z-index: 99999;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	overflow: hidden;

@@ -21,20 +21,33 @@
     <script src="/js/jquery.js">
     </script>
      <!--SHORTCUT ICON-->
-    
+    <!--Link for Font awesome icons-->  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </head>
   
 
 <body>
 
 <div class="wrapper"> <!--VIRSUTINE MENU JUOSTA-->
-   <div class="navbar"><!--VIRSUTINE MENU JUOSTA-->
+   <div class="navbar">
+      <!--VIRSUTINE MENU JUOSTA-->
       <!--VIDEO PAGAL LINK IMETIMA START-->
     <div class = "imest_video search_wrap_6">
      
          <div class="video_input">
+           
+         
             <div class="video_input_inside">
-            <input type="text" id="vids" name="vid1">
+               <div class="dropdown" id = "dropas">
+                  <button class="dropbtn"> <i class="fa fa-youtube"></i></button>
+                  <div class="dropdown-content">
+                 <a class="dropdown-item netflix" href="#"> <span class="iconify" data-icon="mdi-netflix" data-inline="false"></span> </a>  
+                 <a class="dropdown-item twitch" href="#"> <i class="fa fa-twitch"></i>  </a>
+                 <a class="dropdown-item vimeo" href="#"> <i class="fa fa-vimeo"></i></a>  
+                  </div>
+            </div>
+            <input type="text" id="vids" name="vid1" placeholder="Paste a link to a YouTube video">
             <button type="button" id='vidsbtn' onclick="ytlink()" value="Submit" class="btn2">Play</button> <!--VIDEO PAGAL LINK MYGTUKAS SUBMIT-->
             
          </div>
