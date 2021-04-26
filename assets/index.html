@@ -75,7 +75,7 @@
           <li class = "hvr-float search_icon"><a class="nav-item">Join session</a></li>
           
           <li class = "hvr-float"><a class="nav-item settings_icon">Settings</a></li>
-          <li class = "hvr-float"><a href="#" class="nav-item">Donate</a></li>
+          <li class = "hvr-float"><a class="nav-item donate_icon">Donate</a></li>
         </ul>
       </div>
     </div>
@@ -117,24 +117,24 @@
               <div style="display:flex;flex-direction:column">
                 <!--KAD ICONS BUTU VIRS TEKSTO-->
                 <img class="icon" src="/images/group.png">
-                <h3>Watch or listen together</h3>
-                <p>Start a session and invite your friends by sharing your friend code with them.</p>
+                <h3>Watch together</h3>
+                <p>Invite friends, choose the video, and let‘s go! It can’t be easier.</p>
               </div>
             </div>
             <div class="feature">
               <div style="display:flex;flex-direction:column">
                 <!--KAD ICONS BUTU VIRS TEKSTO-->
                 <img class="icon" src="/images/list.png">
-                <h3>Build up the queue</h3>
-                <p>Browse for your favorite media and add the URL to the queue. A number of popular websites are already supported for playback.</p>
+                <h3>Our features</h3>
+                <p>We have live chat, tic tac toe waiting game and emojis, so you can experience the emotions together.</p>
               </div>
             </div>
             <div class="feature">
               <div style="display:flex;flex-direction:column">
                 <!--KAD ICONS BUTU VIRS TEKSTO-->
                 <img class="icon" src="/images/chat.png">
-                <h3>Use enhanced features</h3>
-                <p>New features are added on top of streaming websites such as real-time chat and timestamp markers.</p>
+                <h3>User friendly interface</h3>
+                <p>It is easy to navigate between the pages and find the section you looking for.</p>
               </div>
             </div>
           </div>
@@ -227,7 +227,102 @@
       </div>
     </div><!--JOIN LOBBY SEKCIJA ENDS-->
 
+        <!--DONATE-->
+        <section class="donate_puslapis">
+          <div class="donate_screen">
+            <i class="close_icon fa fa-times hvr-bounce-in"></i>
+           <div class="donate_form">
+      <div class="row">
+        <div class="col-xs-12 tabs">
+          <a href="#monthly" class="btn_styles monthly active">
+            Monthly							
+          </a>
+          <a href="#once" class="btn_styles once">
+            Give Once							
+          </a>
+        </div>
+      </div>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="once" style="display: none;">
+        <!-- Identify your business so that you can collect the payments. -->
+        <input type="hidden" name="business" value="kaukoliukas11@gmail.com">
+        <!-- Specify a Donate button. -->
+        <input type="hidden" name="cmd" value="_donations">
+        <!-- <input type="hidden" name="item_name" value="Friends of the Park">
+                  <input type="hidden" name="item_number" value="Fall Cleanup Campaign"> -->
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="charset" value="utf-8">
+        
+                
+        
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="description">Enter an amount to give (one time)</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="body">
     
+              <div class="input">
+                <input type="number" name="amount" value="5">
+                <div class="addition">EUR</div>
+              </div>
+              <div class="info">"Filmsync" Donation</div>
+              <div class="donate_buttons">
+                <!-- Display the payment button. -->
+                <input type="submit" value="Donate Once" alt="Donate Once" class="btn_styles">
+                <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="monthly">
+        <!-- Identify your business so that you can bill for payments. -->
+        <input type="hidden" name="business" value="kaukoliukas11@gmail.com">
+        <!-- Specify an Automatic Billing button. -->
+        <input type="hidden" name="cmd" value="_xclick-subscriptions">
+        <!-- Specify details about the automatic billing plan. -->
+        <input type="hidden" name="lc" value="EUR">
+        <input type="hidden" name="no_note" value="1">
+        <input type="hidden" name="no_shipping" value="1">
+        <input type="hidden" name="src" value="1">
+        <input type="hidden" name="p3" value="1">
+        <input type="hidden" name="t3" value="M">
+        <input type="hidden" name="currency_code" value="EUR">
+        <!-- Make sure you get the buyer's address during checkout. -->
+        <input type="hidden" name="no_shipping" value="2">
+        <input type="hidden" name="charset" value="utf-8">
+           
+        
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="description">Enter an amount to give (per month)</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="body">
+    
+              <div class="input">
+                <input type="number" name="a3" value="5">
+                <div class="addition">EUR/MONTH</div>
+              </div>
+              <div class="info">"Filmsync" Donation</div>
+              <div class="donate_buttons">
+    
+                <!-- Display the Automatic Billing button. -->
+                <input type="submit" value="Donate Monthly" alt="Donate Monthly" class="btn_styles">
+                <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+          </div>
+        </section>
+        <!--DONATE END-->
 
 
 

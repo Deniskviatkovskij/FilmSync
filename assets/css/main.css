@@ -104,18 +104,20 @@ img {
 /* icons virs orange teksto */
 
 .icon {
+	
 	width: 85px;
 	height: auto;
-	margin-left: 35%;
+	margin-left: 40%;
 }
 /* tekstas apacioje starts */
 
 .rows {
+
 	display: flex;
 	flex-direction: row;
 	width: 80%;
 	max-width: 80%;
-	column-gap: 8px;
+	column-gap: 1.2em;
 	margin-left: 5%;
 	margin-top: auto;
 }
@@ -638,3 +640,176 @@ textarea:focus::placeholder {
 }
 
 
+/* DONATE SEKCIJA  */
+.donate_screen {
+	position: fixed;
+	float: right;
+	width: 70%;
+	height: 0%;
+	background-color: #3B3B58;
+	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	left: 30%;
+	top: 50%;
+	transform: translateY(-50%);
+	overflow: hidden;
+	transition: 0.5s;
+	z-index: 9999;
+}
+.donate_screen.active {
+	height: 100vh;
+	transition-delay: 0s;
+}
+.donate_screen.active .close_icon {
+	opacity: 1;
+}
+
+.donate_form {
+  max-width: 460px;
+  margin: 0 auto;
+  box-shadow: 10px 10px 20px 10px #00000010;
+}
+@media (max-width: 767px) {
+  .donate_form {
+    margin-bottom: 30px;
+    
+  }
+}
+.donate_form .tabs {
+  margin-bottom: 15px;
+}
+.donate_form .tabs .btn_styles {
+  width: 50%;
+  float: left;
+  border: 1px solid #000000;
+  background-color: #f98673;
+  height: 35px;
+  line-height: 35px;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+}
+.donate_form .tabs .btn_styles:not(.active) {
+  color: #000000;
+  background-color: #4e4c4b;
+}
+/*monthly boxas*/
+.donate_form .tabs .btn_styles.active {
+  background-color: #f98673;
+  color: #000000;
+}
+.donate_form .donat-box {
+  width: 33.3% !important;
+}
+.donate_form .radio {
+  display: inline-block;
+  position: relative;
+}
+.donate_form .radio .checkmark {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+.donate_form .radio input {
+  display: none;
+}
+.donate_form .radio input:checked ~ .checkmark {
+  background-color: #002fff;
+}
+.donate_form .input {
+  position: relative;
+}
+.donate_form .input:before {
+  content: "€";
+  position: absolute;
+  color: #000000;
+  left: 18px;
+  top: 50%;
+  transform: translateX(-100%) translateY(-50%);
+}
+/*langelio vidus su suma*/
+.donate_form .input input[type=number] {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  padding: 0 120px 0 20px;
+  color: #000000;
+  opacity: 0.8;
+  font-size: 20px;
+  border-radius: 8px;
+}
+.donate_form .input input[type=number]::-webkit-inner-spin-button, .donate_form .input input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.donate_form .input .addition {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.donate_form #monthly .input input[type=number] {
+  padding: 0 120px 0 20px;
+}
+.donate_form #once .input input[type=number] {
+  padding: 0 55px 0 20px;
+}
+/*Select or enter an amount to give per month*/
+.donate_form .description {
+  background-color: #f98673;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+/*pats boxas*/
+.donate_form .body {
+  border: 1px solid #000000;
+  background-color: #f98673;
+  border-top: none;
+  padding: 25px;
+  border-radius: 8px;
+}
+/*"Filmsync" Donation*/
+.donate_form .body .info {
+  margin-bottom: 20px;
+  color: #000000;
+}
+/*DONATE MYGTUKAS*/
+.donate_form .body .donate_buttons .btn_styles {
+  	width: 100%;
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 24px;
+	border-radius: 8px;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
+	color: #f98673;
+	opacity: 0.8;
+	font-weight: bold;
+	margin-top: 10px;
+	letter-spacing: 1px;
+	background-image: url(http://www.transparenttextures.com/patterns/inspiration-geometry.png) !important;
+	
+
+}
+
+.donate_form .body .donate_buttons .btn_styles:hover {
+	opacity: 1;
+}
+
+.donate_form .goal,
+.donate_form .subgoal,
+.donate_form .thank-you {
+  text-align: center;
+  max-width: 470px;
+  margin: 0 auto;
+}
