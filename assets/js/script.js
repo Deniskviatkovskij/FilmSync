@@ -13,7 +13,7 @@ const vidsbtn = document.getElementById('vidsbtn')
 const vidyt = document.getElementById('vids')
 const dropdown = document.getElementById('dropas')
 if (messageForm != null){
-    appendMessage('You are connected')
+    appendMessage('Jūs prisijungėte')
     setTimeout(  function(){
         setInterval(myTimer, 1000)
     },500)
@@ -163,19 +163,19 @@ socket.on('ytauto', () =>{
         player.pauseVideo();
     }, 300);
     setTimeout(function() {
-        appendMessage(`Video will begin in 5 sec`)
+        appendMessage(`Video prasides uz 5 sec`)
     }, 0);
     setTimeout(function() {
-        appendMessage(`Video will begin in 4 sec`)
+        appendMessage(`Video prasides uz 4 sec`)
     }, 1000);
     setTimeout(function() {
-        appendMessage(`Video will begin in 3 sec`)
+        appendMessage(`Video prasides uz 3 sec`)
     }, 2000);
     setTimeout(function() {
-        appendMessage(`Video will begin in 2 sec`)
+        appendMessage(`Video prasides uz 2 sec`)
     }, 3000)
     setTimeout(function() {
-        appendMessage(`Video will begin in 1 sec`)
+        appendMessage(`Video prasides uz 1 sec`)
     }, 4000);
     
     setTimeout(function() {
