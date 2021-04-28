@@ -74,12 +74,12 @@
               </ul>
              </div>
         <ul>
-          <li class = "hvr-float start_icon"><a href="#" class="nav-item">Start session</a></li>
+          <li class = "hvr-float start_icon"><a href="#" class="nav-item">Pradėti sesiją</a></li>
           
-          <li class = "hvr-float search_icon"><a class="nav-item">Join session</a></li>
+          <li class = "hvr-float search_icon"><a class="nav-item">Prisijungti prie sesijos</a></li>
           
-          <li class = "hvr-float"><a class="nav-item settings_icon">Settings</a></li>
-          <li class = "hvr-float"><a class="nav-item donate_icon">Donate</a></li>
+          <li class = "hvr-float"><a class="nav-item settings_icon">Nustatymai</a></li>
+          <li class = "hvr-float"><a class="nav-item donate_icon">Paremti</a></li>
         </ul>
       </div>
     </div>
@@ -121,24 +121,24 @@
               <div style="display:flex;flex-direction:column">
                 <!--KAD ICONS BUTU VIRS TEKSTO-->
                 <img class="icon" id="iconi" src="/images/group.png" alt="Black Image">
-                <h3>Watch together</h3>
-                <p>Invite friends, choose the video, and let‘s go! It can’t be easier.</p>
+                <h3>Žiūrėk kartu</h3>
+                <p>Pakviesk draugus, pasirink video ir pirmyn! Negali būti paprasčiau</p>
               </div>
             </div>
             <div class="feature">
               <div style="display:flex;flex-direction:column">
                 <!--KAD ICONS BUTU VIRS TEKSTO-->
                 <img class="icon" id="iconis" src="/images/list.png">
-                <h3>Our features</h3>
-                <p>We have live chat, tic tac toe waiting game and emojis, so you can experience the emotions together.</p>
+                <h3>Papildomos funkcijos</h3>
+                <p>Turime gyvą susirašinėjimą, kryžiukų-nuliukų žaidimą laukimui ir emocijų funkciją.</p>
               </div>
             </div>
             <div class="feature">
               <div style="display:flex;flex-direction:column">
                 <!--KAD ICONS BUTU VIRS TEKSTO-->
                 <img class="icon" id="iconisi" src="/images/chat.png">
-                <h3>User friendly interface</h3>
-                <p>It is easy to navigate between the pages and find the section you looking for.</p>
+                <h3>Patogi vartotojo sąsaja</h3>
+                <p>Svetainėje lengva naršyti per puslapius ir rasti skyrių, kurio ieškote.</p>
               </div>
             </div>
           </div>
@@ -149,10 +149,10 @@
     <div class="paieska">
       <div class="search_screen">
         <!--KAD ISTRINTU CONTENT IS SEARCH KAI UZDARAI LANGA-->
-      <form action="room.html">
+      <form action="room_lithuanian.html">
         <div class="search_box_container">
-        <input  class="search_box_name" id="username" for="username" name="username" placeholder="Enter your name" type="text" autocomplete="off" required maxlength="14">
-        <input  class="search_box_id" id="roomNamehtml" name="room" placeholder="Enter room ID" type="text" autocomplete="off" required>
+        <input  class="search_box_name" id="username" for="username" name="username" placeholder="Įvesk savo vardą" type="text" autocomplete="off" required maxlength="14">
+        <input  class="search_box_id" id="roomNamehtml" name="room" placeholder="Įvesk kambario ID" type="text" autocomplete="off" required>
       </div>
       <button class="go_back_right" type="submit" onclick="joinRoom()">
         <i class="fa fa-angle-double-right back_arrow_right"></i>
@@ -162,9 +162,9 @@
          <div class="resultContainer">
           <div style="display: inline;">
             <div class="content-wrap">
-              <h3 class="find_session"><span>Find Session</span></h3><br>
-              <p><span class="session_tekstas">Join the <b>#sessions</b> channel on the FIlmSync Discord community to find other<br>
-              users' sessions. Click the Discord logo below to join.</span></p><a href="https://discord.gg/PQRRMbjX" target="_blank"><img class="discord" src="/images/discord-color.svg"></a>
+              <h3 class="find_session"><span>Rask sesiją</span></h3><br>
+              <p><span class="session_tekstas">Prisijunk prie <b>#sessions</b> kanalo FilmSync Discord bendruomenėje tam, kad rastum kitų naudotojų sesijas.<br>
+                Spustelk ant Discord logo apačioje.</span></p><a href="https://discord.gg/PQRRMbjX" target="_blank"><img class="discord" src="/images/discord-color.svg"></a>
             </div>
           </div>
         </div><!--ISEJIMAS IS JOIN IS SONO-->
@@ -181,15 +181,15 @@
         <div class="mailContainer">
           <form action="https://formspree.io/f/xgepgwyk" id="my-form" method="post" name="my-form">
             <div class="form-group">
-              <label for="firstName">First Name</label> <input id="firstName" name="firstName" required="" type="text">
+              <label for="firstName">Vardas</label> <input id="firstName" name="firstName" required="" type="text">
             </div>
             <div class="form-group">
-              <label for="email">Email</label> <input id="email" name="email" required="" type="email">
+              <label for="email">El. paštas</label> <input id="email" name="email" required="" type="email">
             </div>
             <div class="form-group">
-              <label for="massage">Message</label> 
-              <textarea cols="30" id="massage" name="massage" placeholder="Feel free to tell us about any bugs or possible improvements" required="" rows="10"></textarea>
-            </div><button class="mail_button" type="submit">Submit</button>
+              <label for="massage">Žinutė</label> 
+              <textarea cols="30" id="massage" name="massage" placeholder="Nesidrovėk patarti mums kaip patobulinti svetainę" required="" rows="10"></textarea>
+            </div><button class="mail_button" type="submit">Siųsti</button>
             <div class="thanks" id="status"></div>
           </form>
         </div>
@@ -200,13 +200,13 @@
       <div class="settings_screen">
         <i class="close_icon2 fa fa-times hvr-bounce-in"></i>
         <div class="color-box">
-          <p class="color_text"> Select theme</p>
-          <button class=" mode1" onclick="swapStyle('css/main.css');swapStylea('css/room.css');swapIcons('css/icons.css');swapIcon('/images/group.png');swapIcon2('/images/list.png');swapIcon3('/images/chat.png')" >Blue Mode</button>
-          <button class=" mode2"  onclick="swapStyle('css/main_green.css');swapStylea('css/room_green.css');swapIcons('css/icons.css');swapIcon('/images/group.png');swapIcona('/images/list.png');swapIconas('/images/chat.png')" >Green Mode</button>
-          <button class=" mode3"  onclick="swapStyle('css/main_red.css');swapStylea('css/room_red.css');swapIcons('css/icons_red.css');swapIcon('/images/group2.png');swapIcona('/images/list2.png');swapIconas('/images/chat2.png')" >Red Mode</button>
-          <p class="color_text"> Select language</p>
-<a class="language_box" href="index_lithuanian.html">Lithuanian </a>
-<a class="language_box" href="index.html"> English</a>
+          <p class="color_text"> Pasirink temą</p>
+          <button class=" mode1" onclick="swapStyle('css/main.css');swapStylea('css/room.css');swapIcons('css/icons.css');swapIcon('/images/group.png');swapIcona('/images/list.png');swapIconas('/images/chat.png')" >Mėlynas</button>
+          <button class=" mode2"  onclick="swapStyle('css/main_green.css');swapStylea('css/room_green.css');swapIcons('css/icons.css');swapIcon('/images/group.png');swapIcona('/images/list.png');swapIconas('/images/chat.png')" >Žalias</button>
+          <button class=" mode3"  onclick="swapStyle('css/main_red.css');swapStylea('css/room_red.css');swapIcons('css/icons_red.css');swapIcon('/images/group2.png');swapIcona('/images/list2.png');swapIconas('/images/chat2.png')" >Raudonas</button>
+          <p class="color_text"> Pasirink kalbą</p>
+<a class="language_box" href="index_lithuanian.html">Lietuvių </a>
+<a class="language_box" href="index.html"> Anglų</a>
 </div>
 
       </div>
@@ -214,10 +214,10 @@
 
     <div class="paieska">
       <div class="start_screen">
-         <form action ="room.html">
+         <form action ="room_lithuanian.html">
            <div class="didesnis_input">
              
-        <input class="search_box" id="search_bar username" name="username" placeholder="Enter your name" type="text" autocomplete="off" required maxlength="14">
+        <input class="search_box" id="search_bar username" name="username" placeholder="Įvesk savo vardą" type="text" autocomplete="off" required maxlength="14">
         </div>
         <select hidden  name="room" id="room">					
         </select>
@@ -228,9 +228,9 @@
          <div class="resultContainer">
           <div style="display: inline;">
             <div class="content-wrap">
-              <h3 class="find_session"><span>Invite others</span></h3><br>
-              <p><span class="session_tekstas">Invite your friends and join the <b>#sessions</b> channel on the FIlmSync Discord community to share your<br>
-              session with others. Click the Discord logo below to join.</span></p><a href="https://discord.gg/PQRRMbjX" target="_blank"><img class="discord" src="/images/discord-color.svg"></a>
+              <h3 class="find_session"><span>Pakviesk kitus</span></h3><br>
+              <p><span class="session_tekstas">Pakviesk savo draugus ir prisijunk prie <b>#sessions</b> kanalo FilmSync bendruomenėje savo sesijos pasidalinimu su kitais.<br>
+                Spustelk Discord logo apačioje.</span></p><a href="https://discord.gg/PQRRMbjX" target="_blank"><img class="discord" src="/images/discord-color.svg"></a>
             </div>
           </div>
         </div><!--ISEJIMAS IS JOIN IS SONO-->
@@ -249,10 +249,10 @@
       <div class="row">
         <div class="col-xs-12 tabs">
           <a href="#monthly" class="btn_styles monthly active">
-            Monthly							
+            Mėnesinis mokėjimas							
           </a>
           <a href="#once" class="btn_styles once">
-            Give Once							
+           Skirti vieną kartą							
           </a>
         </div>
       </div>
@@ -270,7 +270,7 @@
         
         <div class="row">
           <div class="col-xs-12">
-            <div class="description">Enter an amount to give (one time)</div>
+            <div class="description">Įvesk norimą skirti kiekį (vienkartinis)</div>
           </div>
         </div>
         <div class="row">
@@ -281,10 +281,10 @@
                 <input type="number" name="amount" value="5">
                 <div class="addition">EUR</div>
               </div>
-              <div class="info">"Filmsync" Donation</div>
+              <div class="info">"Filmsync" parėmimas</div>
               <div class="donate_buttons">
                 <!-- Display the payment button. -->
-                <input type="submit" value="Donate Once" alt="Donate Once" class="btn_styles">
+                <input type="submit" value="Paremti vieną kartą" alt="Donate Once" class="btn_styles">
                 <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
               </div>
             </div>
@@ -311,7 +311,7 @@
         
         <div class="row">
           <div class="col-xs-12">
-            <div class="description">Enter an amount to give (per month)</div>
+            <div class="description">Įvesk norimą skirti kiekį (kiekvieną mėnesį)</div>
           </div>
         </div>
         <div class="row">
@@ -320,13 +320,13 @@
     
               <div class="input">
                 <input type="number" name="a3" value="5">
-                <div class="addition">EUR/MONTH</div>
+                <div class="addition">EUR/MĖN</div>
               </div>
-              <div class="info">"Filmsync" Donation</div>
+              <div class="info">"Filmsync" Parėmimas</div>
               <div class="donate_buttons">
     
                 <!-- Display the Automatic Billing button. -->
-                <input type="submit" value="Donate Monthly" alt="Donate Monthly" class="btn_styles">
+                <input type="submit" value="Remti kas mėnesį" alt="Donate Monthly" class="btn_styles">
                 <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
               </div>
             </div>
