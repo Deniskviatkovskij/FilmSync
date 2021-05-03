@@ -84,7 +84,7 @@ var embed = new Twitch.Embed("twitch-embed", {
     channel: "monstercat",
     layout: "video",
     autoplay: false,
-    
+    parent: ["https://filmsync-env.eba-bgarfwfj.eu-west-3.elasticbeanstalk.com"]
   });
 
   embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
