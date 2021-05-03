@@ -3,7 +3,7 @@ var roomSelection = document.getElementById('room')
 
 
 function createRoom(){
-
+    
     var option = document.createElement("option");
     option.text = makeid(10);
     roomSelection.add(option);

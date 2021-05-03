@@ -12,12 +12,12 @@ const kickOpt = document.getElementById('kickOpt')
 const vidsbtn = document.getElementById('vidsbtn')
 const vidyt = document.getElementById('vids')
 const dropdown = document.getElementById('dropas')
-var currentplayer='youtube';
+var currentplayer='twitch';
 if (messageForm != null){
+  setTimeout(  function(){
+    setInterval(checker, 3000)
+  },500)
     appendMessage('Jūs prisijungėte')
-    setTimeout(  function(){
-        setInterval(myTimer, 1000)
-    },500)
     messageForm.addEventListener('submit', e =>{
         e.preventDefault()
         const message = messageInput.value
@@ -53,12 +53,15 @@ const { username, room } = Qs.parse(location.search, {
   
 // hostas
 const ashostas = window.sessionStorage.getItem('arhostas');
-const defaultvideo = window.sessionStorage.getItem('youtubevideo');
+const twitchChannel = window.sessionStorage.getItem('twitchChannel');
+
+
 if (ashostas == 1){
     socket.emit('Host', username, room)
     host = 'true'
     roomCreator= 'true'
-   
+
+    
 }
 else {
     host = 'false'
@@ -67,72 +70,56 @@ else {
 //
 var pirmasHostas=0;
 var player;
-var ytid;
+
 var time;
 var userID;
 var idlist=[];
 var curtime;
-var startas=0;
-var vidytdefault='lfNhRe0Qlbk';
+var startas=1;
+// twitch 
+var player;
+var embed = new Twitch.Embed("twitch-embed", {
+    width: 854,
+    height: 480,
+    channel: "monstercat",
+    layout: "video",
+    autoplay: false,
+    parent: ["127.0.0.1"]
+  });
 
-if(defaultvideo!=null){
-    vidytdefault = defaultvideo;
-}
-window.sessionStorage.clear()
-
-// yt
-setTimeout(  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      // Set Player height and width
-        height: '100%',
-        width: '100%',
-      // Set the id of the video to be played
-      videoId: `${vidytdefault}`,
-       playerVars: {
-        
-        'autoplay': 0,
-        'controls': 1,
-        'disablekb': 1,
-        'fs': 1,
-        'modestbranding': 1,
-        'rel': 0,
-        'showinfo': 1,
-        'autohide': 1
-        
-      }
-      
-      
-    });
-  }, 500);
-
-
-  function onPlayerReady(event) {
-    event.target.playVideo();
+  embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+    player = embed.getPlayer();
+    player.play();
+    if(twitchChannel!=null){
+    player.setChannel(twitchChannel)
     
-  }
-  var selectedPlayer="youtube";
- 
-   // player select
-   document.getElementById("selectplayer1style").addEventListener("click", function(){
-    if(document.getElementById("selectplayer1").className=="fa fa-twitch"){
-      document.getElementById("selectplayer1style").style.backgroundColor='red';
-      document.getElementById("selectedplayerstyle").style.backgroundColor='#9146ff';
-      document.getElementById("selectedplayer").className="fa fa-twitch";
-      document.getElementById("selectplayer1").className="fa fa-youtube";
-      document.getElementById("vids").placeholder="Enter channel name";
-      selectedPlayer="twitch";
     }
-    else if (document.getElementById("selectplayer1").className=="fa fa-youtube"){
-      document.getElementById("selectplayer1style").style.backgroundColor='#9146ff';
-      document.getElementById("selectedplayerstyle").style.backgroundColor='red';
-      document.getElementById("selectedplayer").className="fa fa-youtube";
-      document.getElementById("selectplayer1").className="fa fa-twitch";
-      document.getElementById("vids").placeholder="Paste a link to a YouTube video";
-      selectedPlayer="youtube";
-    }
-  })
-
+    window.sessionStorage.clear()
+  });
   
+var selectedPlayer="twitch";
+document.getElementById("selectplayer1style").style.backgroundColor='red';
+    document.getElementById("selectedplayerstyle").style.backgroundColor='#9146ff';
+    document.getElementById("selectedplayer").className="fa fa-twitch";
+    document.getElementById("selectplayer1").className="fa fa-youtube";
+ // player select
+ document.getElementById("selectplayer1style").addEventListener("click", function(){
+  if(document.getElementById("selectplayer1").className=="fa fa-twitch"){
+    document.getElementById("selectplayer1style").style.backgroundColor='red';
+    document.getElementById("selectedplayerstyle").style.backgroundColor='#9146ff';
+    document.getElementById("selectedplayer").className="fa fa-twitch";
+    document.getElementById("selectplayer1").className="fa fa-youtube";
+    selectedPlayer="twitch";
+  }
+  else if (document.getElementById("selectplayer1").className=="fa fa-youtube"){
+    document.getElementById("selectplayer1style").style.backgroundColor='#9146ff';
+    document.getElementById("selectedplayerstyle").style.backgroundColor='red';
+    document.getElementById("selectedplayer").className="fa fa-youtube";
+    document.getElementById("selectplayer1").className="fa fa-twitch";
+    selectedPlayer="youtube";
+  }
+})
+//
 
 socket.emit('joinRoom', {username, room})
 
@@ -140,104 +127,64 @@ socket.on('roomHost', username =>{
     host= 'false';
 })
 socket.on('changeChannel', data =>{
-    if(data.playerid!=currentplayer){
-      window.location.replace(`room_twitch.html?username=${username}&room=${room}#`)
-    }
-  })
-socket.on('player_Keitimas', (data) =>{
-    if (data.playerid=='youtube'){
-        setTimeout(function() {
-        window.sessionStorage.setItem("youtubevideo", data.videoId);
-        window.sessionStorage.setItem("arhostas", 0);
-        window.location.replace(`room.html?username=${username}&room=${room}#`)
-        
-        }, 1000);
-    } 
-    else if(data.playerid=='twitch'){
-        setTimeout(function() {
-        window.sessionStorage.setItem("twitchChannel", data.videoId);
-        window.sessionStorage.setItem("arhostas", 0);
-        window.location.replace(`room_twitch.html?username=${username}&room=${room}#`)
-        }, 1000);
-        
-    }
-      
-    
-  })
+  if(data.channel!=player.getChannel()){
+    player.setChannel(data.channel)
+  }
+})
+socket.on('autolinkas', data =>{
+  if(data.playerid!=currentplayer){
+    window.location.replace(`room.html?username=${username}&room=${room}#`)
+  }
+})
 
 socket.on('chat-message', data =>{
     appendMessage(` ${data.name}: ${data.message}`  )
 })
+
 socket.on('ytpauze', () =>{
-    player.pauseVideo();
+    player.pause();
 })
 socket.on('yttesti', () =>{
-    player.playVideo();
+    player.play();
     startas=1;
 })
-socket.on('ytskip5', data =>{
-    player.seekTo(seconds = data.ytime)
-})
-socket.on('ytback5', data =>{
-    player.seekTo(seconds = data.ytime)
 
-})
-socket.on('ytlygint', data =>{
-    if(data.ytime-curtime > 1 || data.ytime-curtime < -1){
-    player.seekTo(seconds = data.ytime+0.3)
-    }
- 
-    
-
-})
 socket.on('c', data =>{
     appendMessage(` ${data.name}: ${data.message}`)
 })
 socket.on('ytikelimas', data =>{
-    player.loadVideoById(videoId = data.yturl)
-    player.pauseVideo();
-    appendMessage(` ${data.name} pakeite video`)
-    ytid=data.yturl;
-    startas=0
-
-})
-socket.on('autolinkas', data =>{
-    if(data.autoytlink!=ytid){
-        player.loadVideoById(videoId = data.autoytlink)
-        ytid=data.autoytlink
-        player.playVideo();
-        startas=1
-    }
-
-})
-
-socket.on('ytauto', () =>{
-    player.seekTo(seconds = '0')
-    player.playVideo();
-    setTimeout(function() {
-        player.pauseVideo();
-    }, 300);
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 5 sec`)
-    }, 0);
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 4 sec`)
-    }, 1000);
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 3 sec`)
-    }, 2000);
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 2 sec`)
-    }, 3000)
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 1 sec`)
-    }, 4000);
-    
-    setTimeout(function() {
-        player.playVideo();
-    }, 5000);
+    player.setChannel(data.yturl)
+    player.pause();
+    appendMessage(` ${data.name} pakeite kanala`)
     startas=1
 
+})
+//socket.on('autolinkas', data =>{
+  //  if(data.autoytlink!=ytid){
+    //    player.setChannel(data.yturl)
+        //chann=data.autoytlink
+      //  player.play();
+        //startas=1
+    //}
+
+//})
+
+socket.on('player_Keitimas', (data) =>{
+  if (data.playerid=='youtube'){
+  setTimeout(function() {
+      window.sessionStorage.setItem("youtubevideo", data.videoId);
+      window.sessionStorage.setItem("arhostas", 0);
+      window.location.replace(`room.html?username=${username}&room=${room}#`)
+      
+  }, 1000);
+  } 
+  else if(data.playerid=='twitch'){
+        window.sessionStorage.setItem("twitchChannel", data.videoId);
+        window.sessionStorage.setItem("arhostas", 0);
+        window.location.replace(`room_twitch.html?username=${username}&room=${room}#`)
+  }
+    
+  
 })
 
 
@@ -288,108 +235,47 @@ function autoscroll(){
     }
   
 };
-function ytlink() {
+function channelName() {
+  if(selectedPlayer=="twitch"){
     if (host == 'true'){
-        if (selectedPlayer=="youtube"){
-            var temp = vidyt.value;
-            vidyt.value='';
-            var res = temp.toString().split('=');
-            var res2= res[1].split('&')
-            
-            ytid= res2[0]
-            player.loadVideoById(videoId = res2[0])
-            player.pauseVideo()
-            startas=0
-            socket.emit('ytlinkas',  ytid, room)
-            appendMessage(` Start when ready`)
-        }
-        else if(selectedPlayer=="twitch"){
-            
-            window.sessionStorage.setItem("twitchChannel", vidyt.value);
-            window.sessionStorage.setItem("arhostas", 1);
-            socket.emit('playerkeitimas',  selectedPlayer,vidyt.value ,room)
-            window.location.replace(`room_twitch.html?username=${username}&room=${room}#`)
-
-        }
+      player.setChannel(vidyt.value)
+      player.pause()
+      socket.emit('ytlinkas',  vidyt.value, room)
     }
-    
-    
-
-  
   }
-function autodelayed() {
+  else if(selectedPlayer=="youtube"){
     if (host == 'true'){
-    player.seekTo(seconds = '0')
-    socket.emit('ytdelay', room)
-    player.playVideo();
-    setTimeout(function() {
-        player.pauseVideo();
-    }, 300);
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 5 sec`)
-    }, 0);
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 4 sec`)
-    }, 1000);
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 3 sec`)
-    }, 2000);
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 2 sec`)
-    }, 3000)
-    setTimeout(function() {
-        appendMessage(`Video prasides uz 1 sec`)
-    }, 4000);
+    var temp = vidyt.value;
+    vidyt.value='';
+    var res = temp.toString().split('=');
+    var res2= res[1].split('&')
+    window.sessionStorage.setItem("youtubevideo", res2);
+    window.sessionStorage.setItem("arhostas", 1);
+    socket.emit('playerkeitimas',  selectedPlayer, res2,room)
+    window.location.replace(`room.html?username=${username}&room=${room}#`)
     
-    setTimeout(function() {
-        player.playVideo();
-        startas =1;
-    }, 5000);}
 
+    
+    }
+  }
 }
+
+    
+
 function pauze(){
     if ( startas == 1){
     socket.emit('ytpause', room)
-    player.pauseVideo();}
+    player.pause();}
         
 }
 function resume(){
     if ( startas == 1){
     socket.emit('ytresume', room)
-    player.playVideo();}
-   
-}
-function skip5(){
-    if (host == 'true' && startas == 1){
-        time = player.getCurrentTime() + 5;
-        socket.emit('ytskip',  time, room)
-        player.seekTo(seconds = time)}
-
-}
-function back5(){
-    if (host =='true' && startas == 1){
-        time = player.getCurrentTime() - 5;
-        socket.emit('ytback', time, room)
-        player.seekTo(seconds = time)}
-  
+    player.play();}
 }
 
 
 
-
-function myTimer(){
-    curtime = player.getCurrentTime()
-    if (host == 'true' && startas == 1){
-        socket.emit('autolink', ytid, room)
-        socket.emit('yttimer', curtime, room)
-        if(player.getPlayerState()==1){
-            socket.emit('ytresume', room)
-        }
-        else if(player.getPlayerState()==2){
-            socket.emit('ytpause', room)
-        }
-    }
-}
 socket.on('giveID', socketid  => {
     userID=socketid;
 })
@@ -432,7 +318,7 @@ socket.on('roomUsersConnect', (  list, socketid ) => {
   });
   
     socket.on('redirectToMain', (a) => {
-   window.location.replace('index.html');
+   //window.location.replace('index.html');
       });
   socket.on('roomUsersDisconnect', (  list,socketid ) => {
     var temp
@@ -483,9 +369,7 @@ function hostList(users, usersid ,x) {
     vidsbtn.hidden=false;
     document.getElementById('logoCenter').style.display='none';
     document.getElementById('logoLeft').style.display='flex';
-    document.getElementById('skip_five').hidden=false;
-    document.getElementById('start').hidden=false;
-    document.getElementById('back_five').hidden=false;
+    
     
     
     if(x==1){
@@ -541,9 +425,6 @@ function userList() {
     document.getElementById('kickAndHost').style.display='none';
     document.getElementById('logoCenter').style.display='flex';
     document.getElementById('logoLeft').style.display='none';
-    document.getElementById('skip_five').hidden=true;
-    document.getElementById('start').hidden=true;
-    document.getElementById('back_five').hidden=true;
     for (var i =0; i < uList.length; i++){
     const li = document.createElement('li');
     var res = uList[i].split('%');
@@ -636,9 +517,6 @@ function newHostList() {
     document.getElementById('dropas').style.display='block';
     document.getElementById('logoCenter').style.display='none';
     document.getElementById('logoLeft').style.display='flex';
-    document.getElementById('skip_five').hidden= false;
-    document.getElementById('start').hidden= false;
-    document.getElementById('back_five').hidden= false;
     
     
     for (var i =0; i < uList.length; i++){
@@ -697,7 +575,12 @@ socket.on('user-kick', (uname, id)=>{
 function simpleInput(){
     document.getElementById('basic_input').style.display='none';
 }
-
+function checker(){
+  if(host=='true'){
+    
+    socket.emit('twitchcheck', vidyt.value,currentplayer, room )
+  }
+}
 
 
 
