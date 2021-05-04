@@ -121,7 +121,12 @@ io.on('connection', socket =>{
   socket.on('userKick', (uList,idlist, room) =>{
     io.to(room).emit('user-kick', uList,idlist)
    })
-   
+   socket.on('playerkeitimas', (playerid, videoId, room) =>{
+    socket.to(room).broadcast.emit('player_Keitimas', {playerid: playerid, videoId: videoId})
+  })
+  socket.on('twitchcheck', (channel, playerid, room) =>{
+    socket.to(room).broadcast.emit('changeChannel', {playerid: playerid, channel: channel})
+  })
   // room patikra 
   socket.on('arHostasYra', (room, host) =>{
     
@@ -192,4 +197,3 @@ function getOpponent(socket) {
   }
   return players[players[socket.id].opponent].socket;
 }
-
