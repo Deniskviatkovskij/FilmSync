@@ -7,7 +7,7 @@ body {
 }
 html {
 	font-family: Arial;
-	background-color: #3B3B58 !important; 
+	background-color: #481f3d !important; 
 	z-index: 99999;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	overflow: hidden;
@@ -97,7 +97,7 @@ img {
 /* uzvedus pelyte orange spalva navbar */
 
 .nav-item:hover {
-	color: #f98673;
+	color: #D8D174;
 }
 /* MELYNA DALIS SONE SU NAVBARU ENDS */
 
@@ -127,7 +127,7 @@ img {
 	min-width: 37%;
 }
 .feature h3 {
-	color: #f98673;
+	color: #D8D174;
 	margin-bottom: 10px;
 	margin-top: -10px;
 }
@@ -152,7 +152,7 @@ img {
 	position: fixed;
 	width: 100%;
 	height: 0;
-	background-color: #3B3B58;
+	background-color: #481f3d ;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -168,7 +168,7 @@ img {
 	position: fixed;
 	width: 100%;
 	height: 0;
-	background-color: #3B3B58;
+	background-color: #481f3d;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -191,7 +191,7 @@ img {
 	background-color: transparent;
 	border: none;
 	outline: none;
-	color: #f98673;
+	color: #D8D174;
 	font-size: 50px;
 	border-bottom: 1px solid white;
 	text-align: center;
@@ -214,7 +214,7 @@ img {
 	margin-right: 2em;
 	border: none;
 	outline: none;
-	color: #f98673;
+	color: #D8D174;
 	font-size: 50px;
 	border-bottom: 1px solid white;
 	text-align: center;
@@ -230,7 +230,7 @@ img {
 	background-color: transparent;
 	border: none;
 	outline: none;
-	color: #f98673;
+	color: #D8D174;
 	font-size: 50px;
 	border-bottom: 1px solid white;
 	text-align: center;
@@ -342,7 +342,7 @@ input:focus::placeholder {
 	left: 10%;
 	font-size: 180px;
 	opacity: 0;
-	color: #f98673;
+	color: #D8D174;
 }
 
 .go_back_right.active, .go_back_right_create.active {
@@ -409,7 +409,7 @@ input:focus::placeholder {
 	left: 25%;
 	font-size: 180px;
 	opacity: 0;
-	color: #f98673;
+	color: #D8D174;
 }
 .go_back:hover .back_arrow, .go_back_right:hover .back_arrow_right, .go_back_right_create:hover .back_arrow_right {
 	opacity: 0.85;
@@ -424,7 +424,7 @@ input:focus::placeholder {
 	float: right;
 	width: 70%;
 	height: 0;
-	background-color: #3B3B58 !important;
+	background-color: #481f3d !important;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -454,7 +454,7 @@ input:focus::placeholder {
 	margin: 0 auto;
 	padding: 10px 20px;
 	box-shadow: 10px 10px 20px 10px #00000010;
-	background-color: #f98673 !important;
+	background-color: #D8D174 !important;
 	border-radius: 8px;
 	margin-bottom: 20px;
 }
@@ -486,7 +486,7 @@ textarea {
 	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
-	color: #f98673 !important;
+	color: #D8D174 !important;
 	opacity: 0.8;
 	font-weight: bold;
 	margin-top: 10px;
@@ -589,16 +589,16 @@ textarea:focus::placeholder {
 	margin-right: 40px;
 }
 #radio1:checked~.navigation-auto .auto-btn1 {
-	background: #f98673;
+	background: #D8D174;
 }
 #radio2:checked~.navigation-auto .auto-btn2 {
-	background: #f98673;
+	background: #D8D174;
 }
 #radio3:checked~.navigation-auto .auto-btn3 {
-	background: #f98673;
+	background: #D8D174;
 }
 #radio4:checked~.navigation-auto .auto-btn4 {
-	background: #f98673;
+	background: #D8D174;
 }
 
 
@@ -608,7 +608,7 @@ textarea:focus::placeholder {
 	float: right;
 	width: 70%;
 	height: 0%;
-	background-color: #3B3B58;
+	background-color: #481f3d;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -646,7 +646,7 @@ textarea:focus::placeholder {
 	float: right;
 	width: 70%;
 	height: 0%;
-	background-color: #3B3B58;
+	background-color: #481f3d;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -684,7 +684,7 @@ textarea:focus::placeholder {
   width: 50%;
   float: left;
   border: 1px solid #000000;
-  background-color: #f98673;
+  background-color: #D8D174;
   height: 35px;
   line-height: 35px;
   font-size: 18px;
@@ -698,7 +698,7 @@ textarea:focus::placeholder {
 }
 /*monthly boxas*/
 .donate_form .tabs .btn_styles.active {
-  background-color: #f98673;
+  background-color: #D8D174;
   color: #000000;
 }
 .donate_form .donat-box {
@@ -762,7 +762,7 @@ textarea:focus::placeholder {
 }
 /*Select or enter an amount to give per month*/
 .donate_form .description {
-  background-color: #f98673;
+  background-color: #D8D174;
   padding: 25px;
   text-align: center;
   border: 1px solid #000000;
@@ -771,7 +771,7 @@ textarea:focus::placeholder {
 /*pats boxas*/
 .donate_form .body {
   border: 1px solid #000000;
-  background-color: #f98673;
+  background-color: #D8D174;
   border-top: none;
   padding: 25px;
   border-radius: 8px;
@@ -792,7 +792,7 @@ textarea:focus::placeholder {
 	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
-	color: #f98673;
+	color: #D8D174;
 	opacity: 0.8;
 	font-weight: bold;
 	margin-top: 10px;
@@ -813,6 +813,7 @@ textarea:focus::placeholder {
   max-width: 470px;
   margin: 0 auto;
 }
+
 
 
 .mode1 {
@@ -836,9 +837,8 @@ margin-top: 100px;
 	color: #f98673;
 	transform: scale(1.1)
 }
-
 .mode3:hover {
-	color: #0F7173;
+	color: #D8D174;
 	transform: scale(1.1)
 }
 
@@ -879,19 +879,57 @@ margin-top: 100px;
 }
 
 
+.language {
+	height:200px;
+	width: 300px;
+background-color:none;
+	margin-top: 60px;
+	margin-left:50px;
+	margin-right: 20px;
+
+	
+}
+
+.lithuanian {
+background-color: white;
+background-image: url("/images/reactions/veliawa.png");
+width:72px;
+height:78px;
+display: inline-block;
+margin-right: 30px;
+margin-left:40px;
+line-height: 80px;
+text-align: center;
+
+}
+
+.english{
+	background-color: white;
+	background-image: url("/images/reactions/veliava2.png");
+	width:72px;
+	height:78px;
+	display: inline-block;
+	margin-right: 25px;
+	margin-left:35px;
+	line-height: 80px;
+	text-align: center;
+	
+	}
 
 a{
 	color: white;
 	text-decoration:none
 }
+
 .color_text {
 	font-size:25px;
 	margin-top:30px;
 	margin-left:30px;
 	margin-bottom:-50px;
 }
+
 .language_box {
-	background-color:#3B3B58;
+	background-color:#481f3d;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	border: solid 1px;
 	border-radius: 10px;
@@ -904,6 +942,7 @@ a{
 	transition: transform .2s;
 }
 .language_box:hover {
-color: #f98673;
+color: #D8D174;
 transform: scale(1.1);
+
 }

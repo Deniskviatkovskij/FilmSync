@@ -7,7 +7,7 @@ body {
 }
 html {
 	font-family: Arial;
-	background-color: #3B3B58 !important; 
+	background-color: #30433B !important; 
 	z-index: 99999;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	overflow: hidden;
@@ -152,7 +152,7 @@ img {
 	position: fixed;
 	width: 100%;
 	height: 0;
-	background-color: #3B3B58;
+	background-color: #30433B;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -168,7 +168,7 @@ img {
 	position: fixed;
 	width: 100%;
 	height: 0;
-	background-color: #3B3B58;
+	background-color: #30433B;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -424,7 +424,7 @@ input:focus::placeholder {
 	float: right;
 	width: 70%;
 	height: 0;
-	background-color: #3B3B58 !important;
+	background-color: #30433B !important;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -608,7 +608,7 @@ textarea:focus::placeholder {
 	float: right;
 	width: 70%;
 	height: 0%;
-	background-color: #3B3B58;
+	background-color: #30433B;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -646,7 +646,7 @@ textarea:focus::placeholder {
 	float: right;
 	width: 70%;
 	height: 0%;
-	background-color: #3B3B58;
+	background-color: #30433B;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	display: flex;
 	align-items: center;
@@ -815,6 +815,7 @@ textarea:focus::placeholder {
 }
 
 
+
 .mode1 {
 	transition: transform .2s;
 	width: 120px;
@@ -836,7 +837,6 @@ margin-top: 100px;
 	color: #f98673;
 	transform: scale(1.1)
 }
-
 .mode3:hover {
 	color: #0F7173;
 	transform: scale(1.1)
@@ -855,7 +855,6 @@ margin-top: 100px;
 	color:white;
 
 }
-
 .mode3 {
 	transition: transform .2s;
 	width: 120px;
@@ -869,6 +868,7 @@ margin-top: 100px;
 	color:white;
 
 }
+
 .color-box {
 	background-color: white;
 	border: solid 1px;
@@ -879,19 +879,57 @@ margin-top: 100px;
 }
 
 
+.language {
+	height:200px;
+	width: 300px;
+background-color:none;
+	margin-top: 60px;
+	margin-left:50px;
+	margin-right: 20px;
+
+	
+}
+
+.lithuanian {
+background-color: white;
+background-image: url("/images/reactions/veliawa.png");
+width:72px;
+height:78px;
+display: inline-block;
+margin-right: 30px;
+margin-left:40px;
+line-height: 80px;
+text-align: center;
+
+}
+
+.english{
+	background-color: white;
+	background-image: url("/images/reactions/veliava2.png");
+	width:72px;
+	height:78px;
+	display: inline-block;
+	margin-right: 25px;
+	margin-left:35px;
+	line-height: 80px;
+	text-align: center;
+	
+	}
 
 a{
 	color: white;
 	text-decoration:none
 }
+
 .color_text {
 	font-size:25px;
 	margin-top:30px;
 	margin-left:30px;
 	margin-bottom:-50px;
 }
+
 .language_box {
-	background-color:#3B3B58;
+	background-color:#30433B;
 	background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png) !important;
 	border: solid 1px;
 	border-radius: 10px;

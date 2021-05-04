@@ -7,29 +7,22 @@
     <title>Lobby</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.6/qs.min.js" integrity="sha512-3TmPrquYLaAsUmZKXRARTDC5siWhLAdBVqNo4dWpDABBtLU62AaoTaQJEvjxjExcZYurO6i1dnK85k8pPIBlRg==" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
-    
+    <script src="/js/colors.js"> </script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src = "https://www.youtube.com/iframe_api"></script>
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/icons.css" rel="stylesheet">
     <link href="/css/animate.css" rel="stylesheet">
     <link href="/css/media.css" rel="stylesheet">
-    <link href="/css/room.css" rel="stylesheet">
+
     <link href="/css/Xo.css" rel="stylesheet">
+    <link id="mystylesheeta" rel="stylesheet" type="text/css" href="/css/room.css">
+    <link id="mystylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/responsive-youtube.js@0.2/responsive-youtube.min.js"></script>
     <script src="/js/jquery.js">
     </script>
-
-
-
-<link id="mystylesheeta" rel="stylesheet" type="text/css" href="/css/room.css">
-    <link id="mystylesheet">
-
-    <script src="/js/colors.js"> </script>
-
-
-
+    
      <!--SHORTCUT ICON-->
     <!--Link for Font awesome icons-->  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
@@ -57,19 +50,19 @@
                  <!--<a class="dropdown-item vimeo" href="#"> <i class="fa fa-vimeo"></i></a>-->
                   </div>
             </div>
-            <input type="text" id="vids" name="vid1" placeholder="Paste a link to a YouTube video">
-            <button type="button" id='vidsbtn' onclick="ytlink()" value="Submit" class="btn2">Play</button> <!--VIDEO PAGAL LINK MYGTUKAS SUBMIT-->
+            <input type="text" id="vids" name="vid1" placeholder="Įklijuok YouTube video nuorodą">
+            <button type="button" id='vidsbtn' onclick="ytlink()" value="Submit" class="btn2">Paleisti</button> <!--VIDEO PAGAL LINK MYGTUKAS SUBMIT-->
             
          </div>
          <div hidden id="logoCenter" class="logo_home"> <!--LOGO PER CENTRA MENU KAI GUEST-->
-            <a href="index.html" title="Home">  <img class="logo2" src="/images/logohome.png" ></a>
+            <a href="index_lithuanian.html" title="Home">  <img class="logo2" src="/images/logohome.png" ></a>
          </div>
          </div>
          
       </div>
        <!--VIDEO PAGAL LINK IMETIMA END-->
       <div class="logo_home" id="logoLeft"> <!--LOGO IS KAIRES KAI HOST-->
-         <a href="index.html" title="Home">  <img class="logo" src="/images/logohome.png" width="100px"></a>
+         <a href="index_lithuanian.html" title="Home">  <img class="logo" src="/images/logohome.png" width="100px"></a>
       </div>
       
        <!--DUOT HOST IR KICK STARTS-->
@@ -78,12 +71,12 @@
          <div id='hostOpt'>
             <select id='hostGiver'>
             </select>
-            <input type="button" onclick="newHost()" value="Host" class="btn_submit">
+            <input type="button" onclick="newHost()" value="Šeimininkas" class="btn_submit">
          </div>
          <div id='kickOpt'>
             <select id='kick'>
             </select>
-            <input type="button" onclick="kickUser()" value="kick" class="btn_kick">
+            <input type="button" onclick="kickUser()" value="Išmesti" class="btn_kick">
          </div>
       </div>
       </div>
@@ -98,7 +91,7 @@
    <div class="room_box"><!--KAMBARIO ID CONTAINER-->
       <div id='roomId' class='roomId' ></div><!--KAMBARIO ID-->
       <div class="sad_copy">
-         <input type='button' onclick='copyid()' value="copy"><!--KAMBARIO ID COPY BUTTON-->
+         <input type='button' onclick='copyid()' value="kopijuoti"><!--KAMBARIO ID COPY BUTTON-->
       </div>
    </div>
    <div id='hostname'></div><!--PASAKO KAS HOST-->
@@ -107,7 +100,7 @@
    <!--CHATO INPUTAS START-->
    <div class="search_wrap search_wrap_5">
       <form id="send-container" class="search_box">
-         <input type="text" id="message-input" class="input" autocomplete="off" placeholder="Chat..." required>
+         <input type="text" id="message-input" class="input" autocomplete="off" placeholder="Bendrauk..." required>
          <button type="submit" id="send-button" class="btn">Siųsti</button>
       </form>
    </div>
@@ -115,7 +108,7 @@
    <div id= 'test'><!--APATINE DALIS (ZAIDIMAS IR PRISIJUNGE NARIAI)-->
     <!--PRISIJUNGE NARIAI START-->
       <div class='listuser' >
-         <ul class="prisijunge_nariai">Prisijunge nariai</ul>
+         <ul class="prisijunge_nariai">Prisijungę nariai</ul>
          <ul id='connectedUsers'></ul>
       </div>
       <!--PRISIJUNGE NARIAI END-->
@@ -134,7 +127,7 @@
             <button id="c1"></button>
             <button id="c2"></button>
             <div id="messages"></div>
-            <div><input type= 'button' id='xojoin' value= 'Join' onclick=joinXO()></div>
+            <div><input type= 'button' id='xojoin' value= 'Žaisti' onclick=joinXO()></div>
          </div>
       </div>
       <!--XO ZAIDIMAS END-->
@@ -152,11 +145,11 @@
      <!--VALDYMO MYGTUKAI START-->
    <footer class = "apacios_menu">
       <div class= "multi-button">
-         <button id="start" onclick="autodelayed()" value="Start">Start</button>
-         <button class="focus" id="pauzes_button" onclick="pauze()" value="Pause">Pause</button>
-         <button class="focus-time" onclick="resume()" value="Resume">Resume</button>
-         <button class="focus-time" id="back_five" onclick="back5()" value="Back 5">Back 5s</button>
-         <button class="focus-time" id="skip_five" onclick="skip5()" value="Skip 5">Skip 5s</button>
+         <button id="start" onclick="autodelayed()" value="Start">Paleisti</button>
+         <button class="focus" id="pauzes_button" onclick="pauze()" value="Pause">Sustabdyti</button>
+         <button class="focus-time" onclick="resume()" value="Resume">Tęsti</button>
+         <button class="focus-time" id="back_five" onclick="back5()" value="Back 5">Atgal 5s</button>
+         <button class="focus-time" id="skip_five" onclick="skip5()" value="Skip 5">Pirmyn 5s</button>
       </div>
     </footer>
     <!--VALDYMO MYGTUKAI END-->

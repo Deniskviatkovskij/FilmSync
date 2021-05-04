@@ -1,0 +1,923 @@
+html {
+	position: relative;
+	min-height: 100%;
+	background-color: #30433B !important; 
+}
+
+body {
+	margin: 0;
+}
+/* HOST NAME */
+.classname {
+	color: #f98673;
+}
+
+/* LOGO  STARTS*/
+.logo_home {
+	position: relative;
+	height: 100%;
+	width: 15%;
+
+	left:0;
+	display: flex;
+	padding:auto;
+	
+	
+	
+
+}
+
+
+
+.logo {
+	min-width: 72%;
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	
+	border-color: yellow;
+	padding: 0;
+top: 10%;
+	position: absolute;
+	
+
+}
+
+.logo2 {
+	width: 80%;
+	padding: 0;
+	
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	
+	max-width: 200px;
+}
+
+#logoCenter {
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	
+	margin-top:2%;
+}
+/* LOGO ENDS*/
+
+/* VIDEO LINK IMETIMAS START */
+.imest_video {
+
+	z-index: 99;
+	min-width: 37%;
+	text-align: center;
+	display: inline-block;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	height: 26px;
+	
+	height: 100%;
+}
+.navbar .imest_video {
+	
+	position: absolute;
+	left: 25%;
+}
+
+.video_input {
+
+
+	height: 100%;
+	display: flex;
+
+	align-items: center;
+	
+
+	
+
+	
+}
+.video_input_inside {
+
+	position: relative;
+	width: 100%;
+	left: 0;
+	height: 24px;
+	
+}
+
+
+.video_input_inside input {
+	left: 0;
+	position: absolute;
+	height: 93%;
+	width: 80%;
+
+
+	
+}
+
+.btn2 {
+	background: transparent;
+	border-width: 2px;
+	border-color: #f98773;
+	position: absolute;
+	right: 0;
+	width: 17%;
+	
+
+	
+}
+
+.video_input .btn2 {
+	margin-left: 3px;
+	background-color: transparent;
+	border-color: #f98673;
+	color: #f98673;
+	height: 29px;
+}
+
+.video_input .btn2:hover {
+	cursor: pointer;
+	color: #fff;
+	background-color: #f98673;
+}
+/* VIDEO LINK IMETIMAS END */
+
+/* VIRSUTINE MENU JUOSTA START */
+.wrapper {
+	width: 70%;
+	position: absolute;
+	display: inline-block;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.350);
+	height: 8vh;
+	align-items: center;
+}
+
+
+.navbar {
+	
+	display: inline-block;
+	position: relative;
+	width: 95%;
+	
+	height: 90%;
+}
+
+
+
+
+/* VIRSUTINE MENU JUOSTA END */
+
+/* APATINE MENU JUOSTA START */
+.apacios_menu {
+	position: absolute;
+	left: 0;
+	bottom: 4%;
+	left: 10%;
+	width: 70%;
+	overflow: hidden;
+}
+/* APATINE MENU JUOSTA END */
+
+/* DESINES PUSES CONTAINER START */
+.right_side {
+	background-color: rgba(0, 0, 0, 0.350);
+	background-image: url('/assets/images/inspiration-geometry.png');
+	position: relative;
+	float: right;
+	max-width: 30%;
+	width: 30%;
+	height: 100vh;
+	min-height: 100%;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	
+	overflow-x: hidden;
+}
+/* DESINES PUSES CONTAINER END */
+
+/* KAIRES PUSES CONTAINER START */
+.left_container {
+	height: 100vh;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	width: 70%;
+}
+/* KAIRES PUSES CONTAINER END */
+
+/* CHAT START */
+.chat {
+	overflow-y: scroll;
+	overflow-x: unset;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #f98773;
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px 20px;
+	box-shadow: 10px 10px 20px 10px #00000010;
+	background-color: #23312b;
+	color: #f98773;
+	border-radius: 8px;
+	margin-bottom: 5px;
+	height: 400px;
+	min-height: 140px;
+}
+.chat_box {
+	width: 100%;
+	min-width: 100%;
+	min-height: 75%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+/* CHAT END */
+
+/* PRISIJUNGE NARIAI IR ZAIDIMAS CONTAINER START */
+#test {
+	display: flex;
+	color: #f98673;
+	text-decoration: none;
+	border-radius: 30px;
+	text-transform: uppercase;
+	list-style-type: none;
+}
+/* PRISIJUNGE NARIAI IR ZAIDIMAS CONTAINER END */
+
+@media screen and (max-height: 680px) {
+	#test {
+		display: inline-block;
+		color: #f98673;
+		text-decoration: none;
+		border-radius: 30px;
+		text-transform: uppercase;
+		list-style-type: none;
+		margin-top: -1em;
+	}
+	.right_side {
+		overflow-y: scroll;
+	}
+	.listuser {
+		border: none !important;
+	}
+	.prisijunge_nariai {
+		border-style: none !important;
+	}
+
+}
+@media screen and (max-width: 1420px) {
+	#test {
+		display: inline-block;
+		color: #f98673;
+		text-decoration: none;
+		border-radius: 30px;
+		text-transform: uppercase;
+		list-style-type: none;
+	}
+	.right_side {
+		overflow-y: scroll;
+	}
+	.listuser {
+	border: none !important;
+	}
+
+	.prisijunge_nariai {
+		border-style: none !important;
+		text-align: start !important;
+	}
+}
+@media screen and (max-height: 750px) {
+	
+	.prisijunge_nariai {
+		border-style: none !important;
+	
+	}
+	.room_box {
+		font-size: 20px;	
+	}
+}
+
+
+.listuser {
+	padding-right: 40px;
+	background-color:#23312b;
+	margin-left: auto;
+	border-width: 0px 1px 0px 0px;
+	border-style: solid;
+	border-color: #f98773;
+}
+/* PRISIJUNGE NARIAI START */
+.prisijunge_nariai {
+	padding-top: 22px;
+
+	margin-top: 0px;
+	list-style-type: none;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 18px;
+	
+	text-align: center;
+	
+	
+}
+/* PRISIJUNGE NARIAI END */
+
+/* XO ZAIDIMAS START */
+.boardgame {
+	padding-left: 40px;
+	background-color: #23312b;
+	margin-right: auto;
+}
+
+.boardgame li {
+	list-style-type: none;
+}
+
+.zaisti_kryziukus {
+	text-align: center;
+	margin-top: 0px;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 18px;
+}
+/* XO ZAIDIMAS END */
+
+
+/* MYGTUKAI APACIOJE START */
+:root {
+	--border-size: 0.125rem;
+	--duration: 250ms;
+	--ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+	--font-family: monospace;
+	--color-primary: #f98673;
+	--color-secondary: #f98673;
+	--color-tertiary: dodgerblue;
+	--shadow: rgba(0, 0, 0, 0.1);
+	--space: 1rem;
+}
+
+
+.multi-button {
+	display: flex;
+	max-width: 70%;
+	box-shadow: var(--shadow) 4px 4px;
+}
+
+.multi-button button {
+	flex-grow: 1;
+	cursor: pointer;
+	position: relative;
+	padding: calc(var(--space) / 1.125) var(--space) var(--space);
+	border: var(--border-size) solid var(--color-primary);
+	color: var(--color-secondary);
+	background-color:#30433B;
+	font-size: 1.5rem;
+	font-family: var(--font-family);
+	text-transform: lowercase;
+	text-shadow: var(--shadow) 2px 2px;
+	transition: flex-grow var(--duration) var(--ease);
+}
+
+.multi-button button+button {
+	border-left: var(--border-size) solid var(--color-primary);
+	margin-left: calc(var(--border-size) * -1);
+}
+
+.multi-button button:hover {
+	flex-grow: 2;
+	color: white;
+	outline: none;
+	text-shadow: none;
+	background-color: var(--color-secondary);
+}
+
+.focus:focus {
+	flex-grow: 2;
+	color: white;
+	outline: none;
+	text-shadow: none;
+	background-color: green;
+}
+
+.multi-button button:focus {
+	
+	outline-offset: var(--border-size);
+  }
+
+
+.multi-button:hover button:focus:not(:hover) {
+	flex-grow: 1;
+	color: var(--color-secondary);
+	
+}
+
+.multi-button button:active {
+	transform: translateY(var(--border-size));
+}
+
+#pauzes_button {
+	margin-left: 0;
+}
+
+#start {
+	margin-right: calc(var(--border-size) * -1);
+}
+
+/* MYGTUKAI APACIOJE END */
+
+
+/* CHAT JUOSTA START */
+#send-container {
+	margin-bottom: 1em;
+	display: inline-flex;
+	justify-content: center;
+	width: 10em;
+	margin-left: 2%;
+}
+
+#send-container input {
+	width: 100%;
+}
+
+.btn {
+	background: transparent;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #f98773;
+	margin-left: 5px;
+}
+
+.search_wrap .search_box .btn:hover {
+	background: #f98673;
+	cursor: pointer;
+}
+
+.search_wrap.search_wrap_5 .search_box .btn:hover {
+	color: #fff;
+}
+
+.search_wrap.search_wrap_5 .search_box .btn {
+	width: 20%;
+	height: 28px;
+	border-radius: 3px;
+	color: #f98673;
+	margin-right: 1em;
+}
+
+.search_box {
+	border: none;
+	
+}
+/* CHAT JUOSTA END */
+
+/* ROOM ID START */
+.sad_copy input {
+	background: transparent;
+}
+
+.room_box {
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	/* top right bottom left */
+	border-color: #f98773;
+	max-width: 84%;
+	width: 500px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #f98773;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 0em;
+	font-size: 20px;
+	letter-spacing: 1px;
+	padding: 10px;
+}
+
+.room_box input {
+	text-align: center;
+	padding: 8px;
+	border-color: #f98673;
+	color: #f98673;
+	border-style: solid;
+	text-transform: uppercase;
+	margin-left: 1em;
+	cursor: pointer;
+}
+
+.room_box input:hover {
+	background-color: #f98673;
+	color: #fff;
+}
+
+
+/* ROOM ID END */
+
+.left_container_child {
+	width: 90%;
+	height: 75%;
+	margin-top: -2em;
+}
+
+/* DUOT HOST IR KICK START */
+
+.kick_ir_duot {
+	
+	z-index: 999;
+	position: absolute;
+	width: 37%;
+	right: 0;
+	height:100%;
+	top:0;
+	align-items: center;
+	display: flex ;
+	text-align: end ; 
+
+	
+
+}
+
+
+
+
+.submit_kick {
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	
+	
+}
+
+
+
+#kickOpt,
+#hostOpt {
+	display: inline-flex;
+	z-index: 999;
+}
+
+#kickOpt select {
+	width: 12vh;
+	margin-left: 1em;
+	height: 26px;
+	padding: 1px 2px;
+	cursor: pointer;
+}
+
+#hostOpt select {
+	width: 12vh;
+	height: 24px;
+	padding: 1px 2px;
+	cursor: pointer;
+}
+
+.btn_submit,
+.btn_kick {
+	margin-left: 3px;
+	background-color: transparent;
+	border-color: #f98673;
+	color: #f98673;
+	
+	
+	/* top right bottom left */
+}
+
+.btn_submit:hover,
+.btn_kick:hover {
+	background-color: #f98673;
+	cursor: pointer;
+	color: #fff;
+}
+/* DUOT HOST IR KICK END */
+.basic_input{
+	position: absolute; 
+	z-index: 10000; 
+	background: black;
+	opacity: 0.9;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  #wrapper{
+	width:100vw;
+	height:100vh;
+	box-sizing:border-box;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+  }
+  .my-super-cool-btn{
+	position:relative;
+	text-decoration:none;
+	color:#fff;
+	letter-spacing:1px;
+	font-size:2rem;
+	box-sizing:border-box;
+  }
+  .my-super-cool-btn .spanas{
+	position:relative;
+	box-sizing:border-box;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:200px;
+	height:200px;
+  }
+  .my-super-cool-btn .spanas:before{
+	content:'';
+	width:100%;
+	height:100%;
+	display:block;
+	position:absolute;
+	border-radius:100%;
+	border:7px solid #f98673;
+	box-sizing:border-box;
+	transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+	box-shadow: 0 30px 85px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+  }
+  .my-super-cool-btn:hover .spanas:before{
+	transform:scale(0.8);
+	box-shadow: 0 20px 55px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+  }
+  .my-super-cool-btn .dots-container{
+	opacity:0;
+	animation: intro 1.6s;
+	animation-fill-mode: forwards;
+  }
+  .my-super-cool-btn .dot{
+	width:8px;
+	height:8px;
+	display:block;
+	background-color:#f98673;
+	border-radius:100%;
+	position:absolute;
+	transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+  }
+  .my-super-cool-btn .dot:nth-child(1){
+	top:50px;
+	left:50px;
+	transform:rotate(-140deg);
+	animation: swag1-out 0.3s;
+	animation-fill-mode: forwards;
+	opacity:0;
+  }
+  .my-super-cool-btn .dot:nth-child(2){
+	top:50px;
+	right:50px;
+	transform:rotate(140deg);
+	animation: swag2-out 0.3s;
+	animation-fill-mode: forwards;
+	opacity:0;
+  }
+  .my-super-cool-btn .dot:nth-child(3){
+	bottom:50px;
+	left:50px;
+	transform:rotate(140deg);
+	animation: swag3-out 0.3s;
+	animation-fill-mode: forwards;
+	opacity:0;
+  }
+  .my-super-cool-btn .dot:nth-child(4){
+	bottom:50px;
+	right:50px;
+	transform:rotate(-140deg);
+	animation: swag4-out 0.3s;
+	animation-fill-mode: forwards;
+	opacity:0;
+  }
+  .my-super-cool-btn:hover .dot:nth-child(1){
+	animation: swag1 0.3s;
+	animation-fill-mode: forwards;
+  }
+  .my-super-cool-btn:hover .dot:nth-child(2){
+	animation: swag2 0.3s;
+	animation-fill-mode: forwards;
+  }
+  .my-super-cool-btn:hover .dot:nth-child(3){
+	animation: swag3 0.3s;
+	animation-fill-mode: forwards;
+  }
+  .my-super-cool-btn:hover .dot:nth-child(4){
+	animation: swag4 0.3s;
+	animation-fill-mode: forwards;
+  }
+  @keyframes intro {
+	 0% {
+	   opacity:0;
+	}
+	100% {
+	   opacity:1;
+	}
+  }
+  @keyframes swag1 {
+	 0% {
+	   top:50px;
+	   left:50px;
+	   width:8px;
+	}
+	50% {
+	  width:30px;
+	  opacity:1;
+	}
+	100% {
+	   top:20px;
+	   left:20px;
+	   width:8px;
+	   opacity:1;
+	}
+  }
+  @keyframes swag1-out {
+	 0% {
+	   top:20px;
+	   left:20px;
+	   width:8px;
+	}
+	50% {
+	   width:30px;
+	  opacity:1;
+	}
+	100% {
+	   top:50px;
+	   left:50px;
+	   width:8px;
+	  opacity:0;
+	}
+  }
+  @keyframes swag2 {
+	 0% {
+	   top:50px;
+	   right:50px;
+	   width:8px;
+	}
+	50% {
+	  width:30px;
+	  opacity:1;
+	}
+	100% {
+	   top:20px;
+	   right:20px;
+	   width:8px;
+	   opacity:1;
+	}
+  }
+  @keyframes swag2-out {
+	 0% {
+	   top:20px;
+	   right:20px;
+	   width:8px;
+	}
+	50% {
+	   width:30px;
+	  opacity:1;
+	}
+	100% {
+	   top:50px;
+	   right:50px;
+	   width:8px;
+	  opacity:0;
+	}
+  }
+  @keyframes swag3 {
+	 0% {
+	   bottom:50px;
+	   left:50px;
+	   width:8px;
+	}
+	50% {
+	  width:30px;
+	  opacity:1;
+	}
+	100% {
+	   bottom:20px;
+	   left:20px;
+	   width:8px;
+	   opacity:1;
+	}
+  }
+  @keyframes swag3-out {
+	 0% {
+	   bottom:20px;
+	   left:20px;
+	   width:8px;
+	}
+	50% {
+	   width:30px;
+	  opacity:1;
+	}
+	100% {
+	   bottom:50px;
+	   left:50px;
+	   width:8px;
+	  opacity:0;
+	}
+  }
+  @keyframes swag4 {
+	 0% {
+	   bottom:50px;
+	   right:50px;
+	   width:8px;
+	}
+	50% {
+	  width:30px;
+	  opacity:1;
+	}
+	100% {
+	   bottom:20px;
+	   right:20px;
+	   width:8px;
+	   opacity:1;
+	}
+  }
+  @keyframes swag4-out {
+	 0% {
+	   bottom:20px;
+	   right:20px;
+	   width:8px;
+	}
+	50% {
+	   width:30px;
+	  opacity:1;
+	}
+	100% {
+	   bottom:50px;
+	   right:50px;
+	   width:8px;
+	  opacity:0;
+	}
+  }
+ 
+.dropbtn {
+	background-color: red;
+	border: none;
+	color: white;
+	font-size: 23px;
+	padding: 1px 7px;
+	
+  }
+
+  
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+	  left: -2.5em;
+	position: absolute;
+	display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 12px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	margin-top: 1px;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	color: black;
+	padding: 10px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content .netflix:hover {background-color: black;}
+  .dropdown-content .twitch:hover {background-color: #9146ff;}
+  .dropdown-content .vimeo:hover {background-color: #86C9EF;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+ .dropdown:hover .dropbtn {
+	 opacity: 0.8;
+ }
+  
+  /* This align the icon to the right */
+  
+
+  .iconify {
+	  color: red;
+  }
+  .fa-vimeo {
+	  color: #86C9EF;
+  }
+  .dropdown-content .vimeo:hover .fa-vimeo {
+	color: #fff;
+}

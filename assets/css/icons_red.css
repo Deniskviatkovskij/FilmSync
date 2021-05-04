@@ -1,0 +1,51 @@
+/* SOCIAL MEDIA ICONS STARTS */
+
+.mediali {
+	list-style: none;
+	margin: 15px 8px;
+	display: inline-block;
+	font-size: 20px;
+	padding: 14px 20px;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	transition: .5s;
+	margin-top: 60px;
+	margin-bottom: -2.5em;
+	align-items: center;
+	justify-content: center;
+}
+.media {
+	width: 500px;
+	padding: 50px;
+	margin-top: 14em;
+	margin-bottom: 0px;
+	display: absolute;
+}
+.media_box {
+	margin: 6em 1em;
+}
+.mediali:hover {
+	color: #d8d174;
+	border: 1px solid #d8d174;
+	z-index: 99;
+	transition: .5s;
+}
+/* SOCIAL MEDIA ICONS ENDS */
+
+.close_icon, .close_icon2 {
+	/* X icons */
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	color: #fff;
+	font-size: 40px;
+	cursor: pointer;
+	opacity: 0;
+}
+.close_icon2 {
+	font-size: 30px;
+}
+.close_icon:hover, .close_icon2:hover {
+	color: #d8d174;
+}
