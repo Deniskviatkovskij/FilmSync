@@ -379,11 +379,18 @@ top: 10%;
 	border: var(--border-size) solid var(--color-primary);
 	color: var(--color-secondary);
 	background-color: #3b3b588e;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	font-family: var(--font-family);
 	text-transform: lowercase;
 	text-shadow: var(--shadow) 2px 2px;
 	transition: flex-grow var(--duration) var(--ease);
+}
+
+
+@media screen and (max-width: 1420px) {
+	.multi-button button {
+		font-size: 1rem;
+	}
 }
 
 .multi-button button+button {

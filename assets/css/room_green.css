@@ -921,3 +921,10 @@ top: 10%;
   .dropdown-content .vimeo:hover .fa-vimeo {
 	color: #fff;
 }
+
+
+@media screen and (max-width: 1420px) {
+	.multi-button button {
+		font-size: 1rem;
+	}
+}
