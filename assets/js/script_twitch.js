@@ -79,12 +79,12 @@ var startas=1;
 // twitch 
 var player;
 var embed = new Twitch.Embed("twitch-embed", {
-    width: '100%',
-    height: '100%',
+    width: 854,
+    height: 480,
     channel: "monstercat",
     layout: "video",
     autoplay: false,
-    parent: ["http://filmsync-env.eba-bgarfwfj.eu-west-3.elasticbeanstalk.com"]
+    parent: ["filmsync-env.eba-bgarfwfj.eu-west-3.elasticbeanstalk.com"]
   });
 
   embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
