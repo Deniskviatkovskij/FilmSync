@@ -920,3 +920,20 @@ top: 10%;
   .dropdown-content .vimeo:hover .fa-vimeo {
 	color: #fff;
 }
+
+
+
+
+.left_container_child {
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#twitch-embed {
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	
+}

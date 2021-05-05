@@ -79,12 +79,12 @@ var startas=1;
 // twitch 
 var player;
 var embed = new Twitch.Embed("twitch-embed", {
-    width: 854,
-    height: 480,
+    width: '100%',
+    height: '100%',
     channel: "monstercat",
     layout: "video",
     autoplay: false,
-    parent: ["filmsync-env.eba-bgarfwfj.eu-west-3.elasticbeanstalk.com"]
+    parent: ["http://filmsync-env.eba-bgarfwfj.eu-west-3.elasticbeanstalk.com"]
   });
 
   embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
@@ -102,6 +102,8 @@ document.getElementById("selectplayer1style").style.backgroundColor='red';
     document.getElementById("selectedplayerstyle").style.backgroundColor='#9146ff';
     document.getElementById("selectedplayer").className="fa fa-twitch";
     document.getElementById("selectplayer1").className="fa fa-youtube";
+    
+    
  // player select
  document.getElementById("selectplayer1style").addEventListener("click", function(){
   if(document.getElementById("selectplayer1").className=="fa fa-twitch"){
@@ -109,6 +111,7 @@ document.getElementById("selectplayer1style").style.backgroundColor='red';
     document.getElementById("selectedplayerstyle").style.backgroundColor='#9146ff';
     document.getElementById("selectedplayer").className="fa fa-twitch";
     document.getElementById("selectplayer1").className="fa fa-youtube";
+    document.getElementById("vids").placeholder="Enter channel name";
     selectedPlayer="twitch";
   }
   else if (document.getElementById("selectplayer1").className=="fa fa-youtube"){
@@ -117,6 +120,7 @@ document.getElementById("selectplayer1style").style.backgroundColor='red';
     document.getElementById("selectedplayer").className="fa fa-youtube";
     document.getElementById("selectplayer1").className="fa fa-twitch";
     selectedPlayer="youtube";
+    document.getElementById("vids").placeholder="Paste a link to a YouTube video";
   }
 })
 //
