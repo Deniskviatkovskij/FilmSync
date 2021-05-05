@@ -379,7 +379,7 @@ top: 10%;
 	border: var(--border-size) solid var(--color-primary);
 	color: var(--color-secondary);
 	background-color: #3b3b588e;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	font-family: var(--font-family);
 	text-transform: lowercase;
 	text-shadow: var(--shadow) 2px 2px;
