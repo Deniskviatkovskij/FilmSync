@@ -371,7 +371,7 @@ socket.on('roomUsersConnect', (  list, socketid ) => {
   });
   
     socket.on('redirectToMain', (a) => {
-   //window.location.replace('index.html');
+   window.location.replace('index.html');
       });
   socket.on('roomUsersDisconnect', (  list,socketid ) => {
     var temp
