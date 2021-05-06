@@ -378,7 +378,7 @@ top: 10%;
 	padding: calc(var(--space) / 1.125) var(--space) var(--space);
 	border: var(--border-size) solid var(--color-primary);
 	color: var(--color-secondary);
-	background-color: #3b3b588e;
+	background-color:#30433B;
 	font-size: 1.2rem;
 	font-family: var(--font-family);
 	text-transform: lowercase;
