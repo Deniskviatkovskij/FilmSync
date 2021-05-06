@@ -13,15 +13,30 @@ const vidsbtn = document.getElementById('vidsbtn')
 const vidyt = document.getElementById('vids')
 const dropdown = document.getElementById('dropas')
 var currentplayer='twitch';
+var path = window.location.pathname;
+var page = path.split("/").pop();
+
+
 if (messageForm != null){
   setTimeout(  function(){
     setInterval(checker, 3000)
   },500)
-    appendMessage('Jūs prisijungėte')
+  if (page=='room_twitch.html'){
+    appendMessage('You have connected')
+  }
+  else if (page=="room_twitch_lithuanian.html"){
+      appendMessage('Jūs prisijungėte')
+  }
     messageForm.addEventListener('submit', e =>{
         e.preventDefault()
         const message = messageInput.value
-        appendMessage(`Jūs: ${message}`)
+        if (page=='room_twitch.html'){
+          appendMessage(`You: ${message}`)
+        }
+        else if (page=="room_twitch_lithuanian.html"){
+          appendMessage(`Jūs: ${message}`)
+        }
+        
         socket.emit('send-chat-message', message, room)
         messageInput.value = ''
     })
@@ -102,6 +117,13 @@ document.getElementById("selectplayer1style").style.backgroundColor='red';
     document.getElementById("selectedplayerstyle").style.backgroundColor='#9146ff';
     document.getElementById("selectedplayer").className="fa fa-twitch";
     document.getElementById("selectplayer1").className="fa fa-youtube";
+    if (page=='room_twitch.html'){
+      document.getElementById("vids").placeholder="Enter channel name";
+    }
+    else if (page=='room_twitch_lithuanian.html'){
+      document.getElementById("vids").placeholder="Įveskite vartotojo vardą";
+    }
+    
     
     
  // player select
@@ -111,7 +133,12 @@ document.getElementById("selectplayer1style").style.backgroundColor='red';
     document.getElementById("selectedplayerstyle").style.backgroundColor='#9146ff';
     document.getElementById("selectedplayer").className="fa fa-twitch";
     document.getElementById("selectplayer1").className="fa fa-youtube";
-    document.getElementById("vids").placeholder="Enter channel name";
+    if (page=='room_twitch.html'){
+      document.getElementById("vids").placeholder="Enter channel name";
+    }
+    else if (page=='room_twitch_lithuanian.html'){
+      document.getElementById("vids").placeholder="Įveskite vartotojo vardą";
+    }
     selectedPlayer="twitch";
   }
   else if (document.getElementById("selectplayer1").className=="fa fa-youtube"){
@@ -120,7 +147,12 @@ document.getElementById("selectplayer1style").style.backgroundColor='red';
     document.getElementById("selectedplayer").className="fa fa-youtube";
     document.getElementById("selectplayer1").className="fa fa-twitch";
     selectedPlayer="youtube";
-    document.getElementById("vids").placeholder="Paste a link to a YouTube video";
+    if (page=='room_twitch.html'){
+      document.getElementById("vids").placeholder="Paste a link to a YouTube video";
+    }
+    else if (page=='room_twitch_lithuanian.html'){
+      document.getElementById("vids").placeholder="Įklijuok YouTube video nuorodą";
+    }
   }
 })
 //
@@ -159,7 +191,12 @@ socket.on('c', data =>{
 socket.on('ytikelimas', data =>{
     player.setChannel(data.yturl)
     player.pause();
-    appendMessage(` ${data.name} pakeite kanala`)
+    if (page=='room_twitch.html'){
+      appendMessage(` ${data.name} changed channel`)
+    }
+    else if (page=="room_twitch_lithuanian.html"){
+      appendMessage(` ${data.name} pakeitė kanalą`)
+    }
     startas=1
 
 })
@@ -193,12 +230,24 @@ socket.on('player_Keitimas', (data) =>{
 
 
 socket.on('user-connected', (name) =>{
+  if (page=='room_twitch.html'){
+    appendMessage(`${name} has connected`)
+  }
+  else if (page=="room_twitch_lithuanian.html"){
     appendMessage(`${name} prisijungė`)
+  }
+    
 
      
 })
 socket.on('user-disconnected', name =>{
+  if (page=='room_twitch.html'){
+    appendMessage(`${name} disconnected`)
+  }
+  else if (page=="room_twitch_lithuanian.html"){
     appendMessage(`${name} atsijungė`)
+  }
+    
     
 })
 
@@ -623,11 +672,22 @@ $(function () {
         if(xotimer==0){
             clearInterval(xotime);
             if (myTurn) {
+              if (page=='room_twitch.html'){
+                $("#messages").text("Game is over. You lost.");
+              }
+              else if (page=="room_twitch_lithuanian.html"){
                 $("#messages").text("Žaidimo pabaiga. Jūs pralaimėjote.");
+              }
+               
                 // Show the message for the winner
                 
               } else {
-                $("#messages").text("Žaidimo pabaiga. Jūs laimėjote!");
+                if (page=='room_twitch.html'){
+                  $("#messages").text("Game is over. You won.");
+                }
+                else if (page=="room_twitch_lithuanian.html"){
+                  $("#messages").text("Žaidimo pabaiga. Jūs laimėjote.");
+                }
               }
               // Disable the board
               $(".board button").attr("disabled", true);
@@ -655,7 +715,13 @@ $(function () {
     // If the game is still going, show who's turn it is
     if (!isGameOver()) {
       if (gameTied()) {
-        $("#messages").text("Lygiosios!");
+        if (page=='room_twitch.html'){
+          $("#messages").text("Draw!");
+        }
+        else if (page=="room_twitch_lithuanian.html"){
+          $("#messages").text("Lygiosios!");
+        }
+        
         $(".board button").attr("disabled", true);
         clearInterval(xotime);
         setTimeout(function() {
@@ -669,11 +735,21 @@ $(function () {
     } else {
       // Show the message for the loser
       if (myTurn) {
-        $("#messages").text("Žaidimo pabaiga. Jūs pralaimėjote.");
+        if (page=='room_twitch.html'){
+          $("#messages").text("Game is over. You lost.");
+        }
+        else if (page=="room_twitch_lithuanian.html"){
+          $("#messages").text("Žaidimo pabaiga. Jūs pralaimėjote.");
+        }
         // Show the message for the winner
         
       } else {
-        $("#messages").text("Žaidimo pabaiga. Jūs laimėjote!");
+          if (page=='room_twitch.html'){
+            $("#messages").text("Game is over. You won.");
+          }
+          else if (page=="room_twitch_lithuanian.html"){
+            $("#messages").text("Žaidimo pabaiga. Jūs laimėjote.");
+          }
       }
       // Disable the board
       $(".board button").attr("disabled", true);
@@ -699,7 +775,12 @@ $(function () {
 
   // Disable the board if the opponent leaves
   socket.on("opponent.left", function () {
-    $("#messages").text("Jūsų priešininkas išėjo.");
+    if (page=='room_twitch.html'){
+        $("#messages").text("Your opponent left.");
+    }
+    else if (page=="room_twitch_lithuanian.html"){
+        $("#messages").text("Jūsų priešininkas išėjo.");
+    }
     $(".board button").attr("disabled", true);
       clearInterval(xotime);
       setTimeout(function() {
@@ -768,12 +849,23 @@ function isGameOver() {
 function renderTurnMessage() {
   // Disable the board if it is the opponents turn
   if (!myTurn) {
-    $("#messages").text("Jūsų priešininko eilė");
+    if (page=='room_twitch.html'){
+      $("#messages").text("Your opponent's turn.");
+    }
+    else if (page=="room_twitch_lithuanian.html"){
+        $("#messages").text("Jūsų priešininko eilė");
+    }
+
     $(".board button").attr("disabled", true);
     // Enable the board if it is your turn
   } else {
-    $("#messages").text("Jūsų eilė.");
-    $(".board button").removeAttr("disabled");
+      if (page=='room_twitch.html'){
+        $("#messages").text("Your turn.");
+      }
+      else if (page=="room_twitch_lithuanian.html"){
+        $("#messages").text("Jūsų eilė.");
+      }
+      $(".board button").removeAttr("disabled");
   }
 }
 

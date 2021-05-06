@@ -31,7 +31,7 @@ setTimeout(function() {
 
 }
    
-}, 100);
+}, 150);
 
 
 function swapStyle(sheet){

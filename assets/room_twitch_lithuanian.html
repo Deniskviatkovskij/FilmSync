@@ -10,6 +10,8 @@
     <script src="/js/colors.js"> </script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src = "https://www.youtube.com/iframe_api"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/icons.css" rel="stylesheet">
     <link href="/css/animate.css" rel="stylesheet">
@@ -51,7 +53,7 @@
                   </div>
             </div>
             <input type="text" id="vids" name="vid1" placeholder="Įklijuok YouTube video nuorodą">
-            <button type="button" id='vidsbtn' onclick="ytlink()" value="Submit" class="btn2">Play</button> <!--VIDEO PAGAL LINK MYGTUKAS SUBMIT-->
+            <button type="button" id='vidsbtn' onclick="channelName()" value="Submit" class="btn2">Play</button> <!--VIDEO PAGAL LINK MYGTUKAS SUBMIT-->
             
          </div>
          <div hidden id="logoCenter" class="logo_home"> <!--LOGO PER CENTRA MENU KAI GUEST-->
@@ -138,18 +140,15 @@
      <!--KAIRE PUSE START-->
     <div class= "left_container">
       <div class = "left_container_child">
-         <div id="player"></div>
+         <div id="twitch-embed"></div>
       </div>
    </div>
     <!--KAIRE PUSE END-->
      <!--VALDYMO MYGTUKAI START-->
    <footer class = "apacios_menu">
       <div class= "multi-button">
-         <button id="start" onclick="autodelayed()" value="Start">Pradėti</button>
+         <button id="start" onclick="resume()" value="Start">Pradėti</button>
          <button class="focus" id="pauzes_button" onclick="pauze()" value="Pause">Sustabdyti</button>
-         <button class="focus-time" onclick="resume()" value="Resume">Tęsti</button>
-         <button class="focus-time" id="back_five" onclick="back5()" value="Back 5">Atgal 5s</button>
-         <button class="focus-time" id="skip_five" onclick="skip5()" value="Skip 5">Pirmyn 5s</button>
          <button class="focus-time" id="lights" value="Lights on/off">Šviesa on/off</button>
       </div>
     </footer>
@@ -181,7 +180,7 @@
 
 
 
-    <script defer src="/js/script.js"></script>
+    <script defer src="/js/script_twitch.js"></script>
 
 
 
