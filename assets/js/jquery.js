@@ -1,3 +1,5 @@
+var ijungtas = 0;
+
 $(document).ready(function(){
   //Add active class
   $(".search_icon").click(function(){
@@ -194,3 +196,128 @@ $('.tabs .btn_styles').click(function() {
         return false;
     });
   });
+
+  $(document).ready(function(){
+    $("#lights").click(function() {
+      if(ijungtas == 0) {
+        ijungtas = 1;
+      }
+      else {ijungtas = 0 
+      }
+    });
+    
+      $("#lights").click(function() {
+        if (ijungtas == 1) {
+        $(".tamsus").css({
+          "display": "block",
+          "background-color": "black",
+          "position": "absolute",
+          "color": "#fff",
+          "height": "100vh",
+          "width": "100%",
+          "z-index": "88",
+        });
+      }
+      });
+      $("#lights").click(function() {
+        if (ijungtas == 1) {
+        $(".wrapper").css({
+          "display": "none"
+        });
+      }
+      });
+      
+      
+      $("#lights").click(function() {
+        if (ijungtas == 1) {
+        $(".right_side").css({
+          "z-index": "999"
+        });
+      }
+      });
+      $("#lights").click(function() {
+        if (ijungtas == 1) {
+        $("#test").css({
+          "display": "none"
+        });
+      }
+      });
+      $("#lights").click(function() {
+        if (ijungtas == 1) {
+        $(".room_box").css({
+          "opacity": "0"
+        });
+      }
+      });
+  
+      $("#lights").click(function() {
+        if (ijungtas == 1) {
+        $("#hostname").css({
+          "opacity": "0"
+        });
+      }
+      });
+      $("#lights").click(function() {
+        if (ijungtas == 0) {
+        $(".wrapper").css({
+          display: 'block'
+        });
+      }
+      });
+  
+      $("#lights").click(function() {
+        if (ijungtas == 0) {
+        $(".right_side").css({
+          "z-index": "0"
+        });
+      }
+      });
+  
+       $("#lights").click(function(){
+        if (ijungtas == 0) {
+        $(".tamsus").css({"display": "none"})
+        }
+       });
+  
+       $("#lights").click(function(){
+        if (ijungtas == 0) {
+        $(".right_side").removeClass("active")
+        }
+       });
+  
+       $("#lights").click(function() {
+        if (ijungtas == 0) {
+        $(".test").css({
+          display: 'flex'
+        });
+      }
+      });
+  
+      $("#lights").click(function() {
+        if (ijungtas == 0) {
+        $("#test").css({
+          "display": "inherit"
+        });
+      }
+      });
+  
+      $("#lights").click(function() {
+        if (ijungtas == 0) {
+        $(".room_box").css({
+          "opacity": "1"
+        });
+      }
+      });
+  
+      $("#lights").click(function() {
+        if (ijungtas == 0) {
+        $("#hostname").css({
+          "opacity": "1"
+        });
+      }
+      });
+    });
+
+
+
+  

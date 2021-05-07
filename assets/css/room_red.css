@@ -21,11 +21,14 @@ body {
 	left:0;
 	display: flex;
 	padding:auto;
+	z-index: 999;
+	
 	
 	
 	
 
 }
+
 
 
 .logo {
@@ -180,6 +183,7 @@ top: 10%;
 	left: 10%;
 	width: 70%;
 	overflow: hidden;
+	z-index: 9999;
 }
 /* APATINE MENU JUOSTA END */
 
@@ -940,4 +944,26 @@ top: 10%;
 	width: 100%;
 	height: 100%;
 	
+}
+
+.tamsus .active {
+    display: none !important;
+    background: black !important;
+}
+
+
+.left_container {
+    z-index: 89 !important;
+}
+.room_box .active {
+    font-size: 100px;
+}
+
+.chat .active {
+    display: none !important;
+    z-index: 99;
+}
+
+.test .active {
+	display: none !important;
 }
