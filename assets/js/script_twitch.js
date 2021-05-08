@@ -166,12 +166,18 @@ socket.on('roomHost', username =>{
 socket.on('changeChannel', data =>{
   if(data.channel!=player.getChannel() && readyplayer=='true'){
     player.setChannel(data.channel)
-    alert('aa')
   }
 })
 socket.on('autolinkas', data =>{
   if(data.playerid!=currentplayer){
-    window.location.replace(`room.html?username=${username}&room=${room}#`)
+    window.sessionStorage.setItem("youtubevideo", data.autoytlink);
+    if (page=="room_twitch.html"){
+      window.location.replace(`room.html?username=${username}&room=${room}#`)
+      }
+    else if(page=="room_twitch_lithuanian.html"){
+      window.location.replace(`room_lithuanian.html?username=${username}&room=${room}#`)
+    }
+
   }
 })
 

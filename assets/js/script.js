@@ -168,13 +168,15 @@ socket.on('roomHost', username =>{
 })
 socket.on('changeChannel', data =>{
     if(data.playerid!=currentplayer){
-        if (page=="room_twitch.html"){
-            window.location.replace(`room_twitch.html?username=${username}&room=${room}#`)
-            }
-        else if(page=="room_twitch_lithuanian.html"){
-            window.location.replace(`room_twitch_lithuanian.html?username=${username}&room=${room}#`)
+        window.sessionStorage.setItem("twitchChannel", data.channel);
+        if (page=="room.html"){
+          window.location.replace(`room_twitch.html?username=${username}&room=${room}#`)
+          }
+        else if(page=="room_lithuanian.html"){
+          window.location.replace(`room_twitch.htmllithuanian.html?username=${username}&room=${room}#`)
         }
-    }
+    
+      }
 })
 
 socket.on('player_Keitimas', (data) =>{
