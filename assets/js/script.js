@@ -192,6 +192,7 @@ socket.on('player_Keitimas', (data) =>{
     }, 1000);
     } 
     else if(data.playerid=='twitch'){
+        setTimeout(function() {
           window.sessionStorage.setItem("twitchChannel", data.videoId);
           window.sessionStorage.setItem("arhostas", 0);
           if (page=="room.html"){
@@ -200,6 +201,7 @@ socket.on('player_Keitimas', (data) =>{
           else if(page=="room_lithuanian.html"){
               window.location.replace(`room_twitch_lithuanian.html?username=${username}&room=${room}#`)
           }
+        }, 1000);
     }
       
     

@@ -67,9 +67,14 @@ const { username, room } = Qs.parse(location.search, {
   }
   
 // hostas
+var defchannel = "monstercat";
 const ashostas = window.sessionStorage.getItem('arhostas');
 const twitchChannel = window.sessionStorage.getItem('twitchChannel');
-
+if(twitchChannel!=null){
+  defchannel=twitchChannel;
+  
+}
+window.sessionStorage.clear()
 
 if (ashostas == 1){
     socket.emit('Host', username, room)
@@ -96,20 +101,16 @@ var player;
 var embed = new Twitch.Embed("twitch-embed", {
     width: '100%',
     height: '100%',
-    channel: "monstercat",
+    channel: `${defchannel}`,
     layout: "video",
     autoplay: false,
     parent: ["filmsync-env.eba-bgarfwfj.eu-west-3.elasticbeanstalk.com"]
   });
-
+var readyplayer;
   embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
     player = embed.getPlayer();
     player.play();
-    if(twitchChannel!=null){
-    player.setChannel(twitchChannel)
-    
-    }
-    window.sessionStorage.clear()
+    readyplayer='true';
   });
   
 var selectedPlayer="twitch";
@@ -163,8 +164,9 @@ socket.on('roomHost', username =>{
     host= 'false';
 })
 socket.on('changeChannel', data =>{
-  if(data.channel!=player.getChannel()){
+  if(data.channel!=player.getChannel() && readyplayer=='true'){
     player.setChannel(data.channel)
+    alert('aa')
   }
 })
 socket.on('autolinkas', data =>{
@@ -215,18 +217,33 @@ socket.on('player_Keitimas', (data) =>{
   setTimeout(function() {
       window.sessionStorage.setItem("youtubevideo", data.videoId);
       window.sessionStorage.setItem("arhostas", 0);
+      if (page=="room_twitch.html"){
       window.location.replace(`room.html?username=${username}&room=${room}#`)
+      }
+      else if(page=="room_twitch_lithuanian.html"){
+        window.location.replace(`room_lithuanian.html?username=${username}&room=${room}#`)
+      }
       
   }, 1000);
   } 
   else if(data.playerid=='twitch'){
+      setTimeout(function() {
         window.sessionStorage.setItem("twitchChannel", data.videoId);
         window.sessionStorage.setItem("arhostas", 0);
-        window.location.replace(`room_twitch.html?username=${username}&room=${room}#`)
+        if (page=="room.html"){
+          window.location.replace(`room_twitch.html?username=${username}&room=${room}#`)
+        }
+        else if(page=="room_lithuanian.html"){
+            window.location.replace(`room_twitch_lithuanian.html?username=${username}&room=${room}#`)
+        }
+      }, 1000);
   }
     
   
 })
+    
+  
+
 
 
 socket.on('user-connected', (name) =>{
@@ -292,6 +309,7 @@ function channelName() {
   if(selectedPlayer=="twitch"){
     if (host == 'true'){
       player.setChannel(vidyt.value)
+      defchannel=vidyt.value;
       player.pause()
       socket.emit('ytlinkas',  vidyt.value, room)
     }
@@ -371,7 +389,9 @@ socket.on('roomUsersConnect', (  list, socketid ) => {
   });
   
     socket.on('redirectToMain', (a) => {
-   window.location.replace('index.html');
+      if (twitchChannel==null){
+        window.location.replace('index.html');
+      }
       });
   socket.on('roomUsersDisconnect', (  list,socketid ) => {
     var temp
@@ -631,7 +651,7 @@ function simpleInput(){
 function checker(){
   if(host=='true'){
     
-    socket.emit('twitchcheck', vidyt.value,currentplayer, room )
+    socket.emit('twitchcheck', defchannel,currentplayer, room )
   }
 }
 
