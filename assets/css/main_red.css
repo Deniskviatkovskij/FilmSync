@@ -350,6 +350,9 @@ input:focus::placeholder {
 	animation: fadeIn ease 10s;
   -webkit-animation: fadeIn ease 2s;
 }
+.go_back_right.active:hover, .go_back_right_create.active:hover {
+	background-color: rgba(255, 255, 255, 0.116);
+}
 
 
 
@@ -413,7 +416,7 @@ input:focus::placeholder {
 }
 .go_back:hover .back_arrow, .go_back_right:hover .back_arrow_right, .go_back_right_create:hover .back_arrow_right {
 	opacity: 0.85;
-	
+	animation: grow ease 1.2s;
 }
 /* JOIN LOBBY ENDS */
 
