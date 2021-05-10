@@ -13,7 +13,7 @@ console.log('icona:', setIcona)
 console.log('iconas:', setIconas)
 
 setTimeout(function() {
-    if ( setThemea == null){
+    if ( setThemea == null || setTheme == null){
   swapStyle('css/main.css')
   swapStylea('css/room.css')
   swapStylea('css/icons.css')
