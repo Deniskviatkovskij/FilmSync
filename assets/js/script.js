@@ -21,7 +21,7 @@ if (messageForm != null){
     if (page=='room.html'){
         appendMessage('You have connected')
     }
-    else if (page=="room.html"){
+    else if (page=="room_lithuanian.html"){
         appendMessage('Jūs prisijungėte')
     }
     
@@ -34,7 +34,7 @@ if (messageForm != null){
         if (page=='room.html'){
             appendMessage(`You: ${message}`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Jūs: ${message}`)
         }
        
@@ -244,7 +244,7 @@ socket.on('ytikelimas', data =>{
     if (page=='room.html'){
         appendMessage(` ${data.name} changed video`)
     }
-    else if (page=="room.html"){
+    else if (page=="room_lithuanian.html"){
         appendMessage(` ${data.name} pakeite video`)
     }
     
@@ -272,7 +272,7 @@ socket.on('ytauto', () =>{
         if (page=='room.html'){
             appendMessage(`Video will start in 5 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 5 s`)
         }
         
@@ -281,7 +281,7 @@ socket.on('ytauto', () =>{
         if (page=='room.html'){
             appendMessage(`Video will start in 4 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 4 s`)
         }
     }, 1000);
@@ -289,7 +289,7 @@ socket.on('ytauto', () =>{
         if (page=='room.html'){
             appendMessage(`Video will start in 3 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 3 s`)
         }
     },1000);
@@ -297,7 +297,7 @@ socket.on('ytauto', () =>{
         if (page=='room.html'){
             appendMessage(`Video will start in 2 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 2 s`)
         }
     }, 3000)
@@ -305,7 +305,7 @@ socket.on('ytauto', () =>{
         if (page=='room.html'){
             appendMessage(`Video will start in 1 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 1 s`)
         }
     }, 4000);
@@ -322,7 +322,7 @@ socket.on('user-connected', (name) =>{
     if (page=='room.html'){
         appendMessage(`${name} has connected`)
     }
-    else if (page=="room.html"){
+    else if (page=="room_lithuanian.html"){
         appendMessage(`${name} prisijungė`)
     }
    
@@ -333,7 +333,7 @@ socket.on('user-disconnected', name =>{
     if (page=='room.html'){
         appendMessage(`${name} disconnected`)
     }
-    else if (page=="room.html"){
+    else if (page=="room_lithuanian.html"){
         appendMessage(`${name} atsijungė`)
     }
     
@@ -390,7 +390,7 @@ function ytlink() {
             player.pauseVideo()
             startas=0
             socket.emit('ytlinkas',  ytid, room)
-            if (page=='room.html'){
+            if (page=='room_lithuanian.html'){
                 appendMessage(`Galite pradėti`)
             }
             else if (page=="room.html"){
@@ -432,7 +432,7 @@ function autodelayed() {
         if (page=='room.html'){
             appendMessage(`Video will start in 5 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 5 s`)
         }
     }, 0);
@@ -440,7 +440,7 @@ function autodelayed() {
         if (page=='room.html'){
             appendMessage(`Video will start in 4 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 4 s`)
         }
     }, 1000);
@@ -448,7 +448,7 @@ function autodelayed() {
         if (page=='room.html'){
             appendMessage(`Video will start in 3 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 3 s`)
         }
     },2000);
@@ -456,7 +456,7 @@ function autodelayed() {
         if (page=='room.html'){
             appendMessage(`Video will start in 2 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 2 s`)
         }
     }, 3000)
@@ -464,7 +464,7 @@ function autodelayed() {
         if (page=='room.html'){
             appendMessage(`Video will start in 1 sec`)
         }
-        else if (page=="room.html"){
+        else if (page=="room_lithuanian.html"){
             appendMessage(`Video prasidės už 1 s`)
         }
     }, 4000);
