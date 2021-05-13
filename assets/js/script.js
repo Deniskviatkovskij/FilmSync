@@ -89,7 +89,7 @@ var userID;
 var idlist=[];
 var curtime;
 var startas=0;
-var vidytdefault='lfNhRe0Qlbk';
+var vidytdefault='6SKMGkn2lMk';
 
 if(defaultvideo!=null){
     vidytdefault = defaultvideo;
